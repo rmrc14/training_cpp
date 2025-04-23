@@ -22,21 +22,13 @@ Output:
 
 */
 
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
 #include <iostream>
 using namespace std;
 
 int main()
 {
     int array1[10] = { 0 }, array2[10] = { 0 };
-    int num1, num2, count = 0, i = 0, sum1 = 0, sum2 = 0;
+    int num1, num2, count = 0, i = 0, sum1 = 0, sum2 = 0, tmp1 = 0, tmp2 = 0;
     cout << "enter a number" << endl;
     cin >> num1;
     cout << "enter a number" << endl;
@@ -58,17 +50,25 @@ int main()
     cout << count << endl;
     for (int j = 0;j < count;j++)
     {
-        for (int k = 0;k < count;k++)
+        tmp1 = array1[j];
+        tmp2 = array2[j];
+        for (int k = j;k < count;k++)
         {
-            if (array1[j] == array1[k] && j != k)
+            if (tmp1 == array1[k] && j != k)
                 array1[j] = array1[k] = 0;
-            if (array2[j] == array2[k] && j != k)   // one test case failed
+            if (tmp2 == array2[k] && j != k)
                 array2[j] = array2[k] = 0;
 
         }
 
     }
+
+
+
+
     //cout<<"exited  "<<sum1<<endl;
+
+
 
 
     for (i = 0;i < count;i++)
