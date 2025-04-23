@@ -13,7 +13,7 @@ int main()
 	int item = 0, cart=0;
 
 	cout << "amount user have in wallet";
-	cin >> wallet;
+	cin >> wallet;// do money decrement
 	do {
 		
 		cout << "are there item to be added to the cart-- item to be purchased(0/1) " << endl;
