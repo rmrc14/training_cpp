@@ -44,7 +44,7 @@ void display1()
 	int n = 5;
 	for (i = 0; i < 5; i++)
 	{
-		for (j = n - 1 - i; j >= 0; j--)
+		for (j = n- i-1; j >= 0; j--)
 		{
 			cout << " ";
 		}
