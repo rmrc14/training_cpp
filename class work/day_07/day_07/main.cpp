@@ -4,17 +4,21 @@ using namespace std;
 void display1();
 void display2();
 void display3();
-//void display4();
+void display4();
 
 
 
 int main()
 {
-	//display1();
-	//display2();
+	cout << "quest 3--- solution of q1 :"<<endl;
+	display1();
+	cout << "quest 3--- solution of q2 :" << endl;
+	display2();
+	cout << "quest 3--- solution of q3 :" << endl;
 	display3();
-	//display4();
-
+	cout << "quest 3--- solution of q4 :" << endl;
+	display4();
+	cout << "quest 3--- solution of q5 :" << endl;
 
 
 	return 0;
@@ -123,11 +127,56 @@ void display3() {
 	int n = 5;
 	for (i = 0; i < 5; i++)
 	{
-		for (i = 0; i < 5; i++)
+		for (j=0;j<i;j++)
+			cout << "*";
+		
+		cout << endl;
+		
+	}
+	for (i = 0; i < 5; i++)
+	{
+		for (j=5;j>i;j--)
+			cout << "*";
+		
+		cout << endl;
+		
+	}
+}
+
+
+/*Q3.
+ Write the logic to print inverted right triangle star pattern.
+
+Input Format  : First line contains N of type integer.
+
+Output Format : Print the inverted right triangle star pattern.
+
+Constrains:
+2<=N<=10
+Sample Input:
+5
+
+Sample Output:
+*****
+****
+***
+**
+*
+
+*/
+
+
+void display4() {
+
+	int i, j;
+	int n = 5;
+	
+	for (i = 0; i < 5; i++)
+	{
+		for (j = 5;j > i;j--)
 			cout << "*";
 
-		for (j = n - i - 1; j >= 0; j--)
-			cout << "*";
 		cout << endl;
+
 	}
 }
