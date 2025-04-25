@@ -54,7 +54,13 @@ int main()
 				cout << j;
 
 		}
-		
+		for (int k = num - i - 1; k < num;k++)
+		{
+			if (k == 0)
+				cout << "*";
+			else
+				cout << k;
+		}
 		cout << endl;
 
 		
