@@ -44,25 +44,38 @@ int main()
 	cout << "enter a num (4<=N<=10)" << endl;
 	cin >> num;
 
-	for (int i = 0; i < num ;i++)
+	for (int i = 0; i <=num ;i++)
 	{
 		for (int j = 0 ; j <= i ; j++)
 		{
-			cout << "*";
+			if (j == 0)
+				cout << "*";
+			else
+				cout << j;
 
 		}
+		
 		cout << endl;
 
 		
 
-
 	}
 
 	for (int i = 0; i < num;i++)
-	{
-		for (int j = i; j < num; j++)
+	{    
+		for (int k = 0;k < num-i-1;k++)
 		{
-			cout << "*";
+			if (k == 0)
+				cout << "*";
+			else
+				cout << k;
+		}
+		for (int j = num - i ; j >= 0; j--)
+		{
+			if (j == 0)
+				cout << "*";
+			else
+				cout << j;
 
 		}
 		cout << endl;
