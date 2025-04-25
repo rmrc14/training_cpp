@@ -63,7 +63,7 @@ int main()
 
 	for (int i = 0; i < num;i++)
 	{    
-		for (int k = 0;k < num-i-1;k++)
+		for (int k = 0;k < num-i;k++)
 		{
 			if (k == 0)
 				cout << "*";
