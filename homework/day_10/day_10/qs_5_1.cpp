@@ -55,6 +55,7 @@ int main()
 		ret = fib(i);
 		cout << ret << " ";
 	}
+	cout << "nth fib no is: " << ret;
 
 	// for displaying the count of zeros 
 	long long int num1;
