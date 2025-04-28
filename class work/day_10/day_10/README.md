@@ -1,3 +1,3 @@
-# day 10 
+# day 10 FUNCTION CALLS
 
-implemented the assessment qs pattern printing and day content .
+implemented the assessment week 2 qs pattern printing and day content .

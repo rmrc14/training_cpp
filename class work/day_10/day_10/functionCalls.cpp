@@ -36,7 +36,7 @@ int main()
 
 
 
-	//
+	//call by reference
 	res = updateAdd3(a, b);
 	cout << "updated value:\n" << res;
 	cout << "\n" << a << " = a\n";
@@ -45,6 +45,7 @@ int main()
 	return 0;
 
 }
+//call by value
 int add(int v1, int v2)
 {
 
