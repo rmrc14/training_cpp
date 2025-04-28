@@ -59,9 +59,9 @@ void student()
 	printf("enter the m4 :\n");
 	//scanf("%s", name);
 	avg_1 = (m_1 + m_2 + m_3 + m_4) / 4;
-	avg_2 = (m1_ + m2_ + m3_ + m4_ ) / 4;
-	avg_3 = (m1_ + m2_ + m3_ + m4_ ) / 4;
-	avg_4 = (m1_ + m2_ + m3_ + m4_ ) / 4;
+	avg_2 = (m1_1 + m1_2 + m1_3 + m1_4 ) / 4;
+	avg_3 = (m2_1 + m2_2 + m2_3 + m2_4 ) / 4;
+	avg_4 = (m3_1 + m3_2 + m3_3 + m3_4 ) / 4;
 
 	
 }
