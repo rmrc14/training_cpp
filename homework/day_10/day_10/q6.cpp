@@ -22,13 +22,40 @@ Hint:
 Use a function that calculates sum of digits.
 If result >= 10, call the same function again.
 
+
+3. Check if a Year is a Leap Year
+Problem:
+Write a function to check whether a given year is leap year or not.
+
+Hint:
+Leap year if:
+
+Divisible by 4 and not divisible by 100, or
+Divisible by 400.
+Use logical operators && and ||.
+
+
+Find the Second Last Digit of a Number
+Problem:
+Given a positive integer, find its second last digit.
+
+Hint:
+
+First, divide number by 10 (n/10) to remove the last digit.
+Then get last digit of the result using modulo (% 10).
 */
 
 
 #include<iostream>
 
+
+int add(int , int );
+int num_of_digits(int );
 int findmiddle_num(int,int,int);
-int sum_digits_single(int);
+void leapYear(int);
+int second_lastdigit(int);
+//int sum_digits_single(int);
+
 //int fib(int);
 //int countZeros(long long int);
 
@@ -36,12 +63,19 @@ using namespace std;
 
 int main()
 {
-	int num1, num2, num3,res;
+	int num1, num2, num3,res,yr;
 	cout << "enter the 3 integers to check the middle no:" << endl;
 	cin >> num1 >> num2 >> num3;
 	res = findmiddle_num(num1, num2, num3);
 	cout << "result :" << res << endl;
 
+
+	cout << "enter the year to be checked\n";
+	cin >> yr;
+	leapYear(yr);
+
+	// 2nd last digit
+	cout << second_lastdigit(yr)<<endl;
 
 
 
@@ -60,9 +94,63 @@ int findmiddle_num(int a, int b, int c)
 
 
 }
-int sum_digits_single(int)
+/*int sum_digits_single(int n)
+{
+	if (n < 10) {
+		return n;
+	}
+	else {
+		int sum = 0;
+
+		// Calculate sum of digits of the current number
+		while (n > 0) {
+			sum += n % 10;  // Add the last digit to sum
+			n /= 10;         // Remove the last digit
+		}
+	return 0;
+
+}*/
+
+
+
+
+
+// functionalities
+int add(int a, int b)
 {
 
+	return a + b;
+}
 
+int num_of_digits(int n) // gets num of digits
+
+{
+	int array[10] = { 0 }, count = 0;
+	
+	while(n!=0)
+	{
+		int tmp = n % 10;
+		//array[count] = tmp;
+		count++;
+		n /= 10;
+	}
+
+	return count;
+}
+
+void leapYear(int year)
+{
+
+	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+		cout<<"its leap year\n ";
+	else
+		cout<<"its not leap year\n";
+
+}
+
+int second_lastdigit(int n)
+{
+	n /= 10;
+	return n % 10;
 
 }
