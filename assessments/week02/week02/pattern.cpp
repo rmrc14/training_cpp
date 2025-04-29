@@ -37,59 +37,52 @@ using namespace std;
 
 
 
+#include <iostream>
+
+using namespace std;
+
 int main()
 {
-	int num;
-	 
-	cout << "enter a num (4<=N<=10)" << endl;
-	cin >> num;
-
-	for (int i = 1; i <=num ;i++)
+	int i, j, l, k, n;
+	cout << "enter no.:" << endl;
+	cin >> n;
+	cout << endl;
+	for (i = 0;i <= n;i++)
 	{
-		cout << "*";
-		for (int j = 1 ; j <= i ; j++)
+		for (l = i;l <= i;l++)
+			cout << "*";
+
+		for (j = 1;j <= i;j++)
 		{
-				cout << j;
-
+			cout << j;
 		}
-		for (int k =num-i ; k >=1 ;k--)
+		for (k = i - 1;k > 0;k--)
 		{
-				cout << k;
+			cout << k;
 		}
-		cout <<"*" << endl;
-
-		
-
-	}
-
-	for (int i = 0; i < num;i++)
-	{    
-		for (int k = 0;k < num-i;k++)
-		{
-			if (k == 0)
-				cout << "*";
-			else
-				cout << k;
-		}
-		for (int j = num - i ; j >= 0; j--)
-		{
-			if (j == 0)
-				cout << "*";
-			else
-				cout << j;
-
-		}
+		for (int m = n;m >= n - k;m--)
+			cout << "*";
 		cout << endl;
-
-
-
-
 	}
+	
+	for (i = 0;i < n;i++)
+	{
+		for (l = i;l <= i;l++)
+			cout << "*";
+		for (k = 1;k < n - i;k++)
+		{
+			cout << k;
+		}
+		k--;
+		for (j = k - 1;j >= 1;j--)
+		{
+			cout << j;
+		}
+		for (l = i - j;l <= i;l++)
+			cout << "*";
 
-
-
-
+		cout << endl;
+	}
 
 	return 0;
-
 }

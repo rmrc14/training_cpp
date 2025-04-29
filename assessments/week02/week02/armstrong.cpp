@@ -33,13 +33,23 @@ int main()
 	cout << "enter a num to be checked as armstrong no. 3 digits" << endl;
 	cin >> num;
 	tmp = num; //stores temporarily num value
-
+	int digits = 0;
+	while (tmp != 0) {
+		tmp /= 10;
+		digits++;
+	}
+	tmp = num;
 	while (tmp != 0)// while used to get individual digits of the given no.
 	{
 		
 
 		rem = tmp % 10;
-		val =val+ (rem *rem* rem);
+		int power = 1;
+		for (int i = 0; i < digits; i++) 
+		{
+			power *= rem;  // Multiply rem by itself 'digits' times
+		}
+		val += power;
 		tmp /= 10;
 	
 		
