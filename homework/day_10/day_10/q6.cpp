@@ -115,6 +115,15 @@ int main()
 	res=power(num1, num2);
 	cout << "the power is: " << res << endl;
 
+	// valid triangle or not
+
+	if (valid_triangle(num1, num2, num3) == 1)
+		cout << " possible to make triangle \n";
+	else
+		cout << "not possible .\n";
+
+
+
 	return 0;
 }
 
