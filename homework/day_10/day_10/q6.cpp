@@ -60,6 +60,7 @@ int newNum(int, int);
 void swapNum(int&,int&);
 int power(int, int);
 bool valid_triangle(int, int, int);
+void sum_digits_single(int );
 //int countZeros(long long int);
 // need to create header file
 
@@ -126,6 +127,10 @@ int main()
 		cout << " possible to make triangle \n";
 	else
 		cout << "not possible .\n";
+	//sum_digits_single qs 2
+	cout << "Enter the input: ";
+	cin >> num1;
+	sum_digits_single(num1);
 
 
 
@@ -144,22 +149,24 @@ int findmiddle_num(int a, int b, int c)
 
 
 }
-/*int sum_digits_single(int n)
+void sum_digits_single(int num)
 {
-	if (n < 10) {
-		return n;
-	}
-	else {
-		int sum = 0;
-
-		// Calculate sum of digits of the current number
-		while (n > 0) {
-			sum += n % 10;  // Add the last digit to sum
-			n /= 10;         // Remove the last digit
+	if (num >= 10)
+	{
+		int temp = num, sum = 0;
+		while (temp > 0)
+		{
+			sum += (temp % 10);
+			temp /= 10;
 		}
-	return 0;
+		cout << sum << endl;
+		sum_digits_single(sum);
+	}
+	else
+		return;
 
-}*/
+}
+
 
 
 
