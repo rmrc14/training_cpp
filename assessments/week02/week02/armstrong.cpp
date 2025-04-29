@@ -34,12 +34,12 @@ int main()
 	cin >> num;
 	tmp = num; //stores temporarily num value
 	int digits = 0;
-	while (tmp != 0) {
+	while (tmp != 0) {// while used to get individual digits of the given no.
 		tmp /= 10;
 		digits++;
 	}
 	tmp = num;
-	while (tmp != 0)// while used to get individual digits of the given no.
+	while (tmp != 0)
 	{
 		
 
@@ -49,7 +49,7 @@ int main()
 		{
 			power *= rem;  // Multiply rem by itself 'digits' times
 		}
-		val += power;
+		val += power;  // add value of each digits
 		tmp /= 10;
 	
 		
