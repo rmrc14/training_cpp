@@ -61,8 +61,12 @@ void swapNum(int&,int&);
 int power(int, int);
 bool valid_triangle(int, int, int);
 //int countZeros(long long int);
+// need to create header file
+
 
 using namespace std;
+
+
 
 int main()
 {
@@ -116,7 +120,8 @@ int main()
 	cout << "the power is: " << res << endl;
 
 	// valid triangle or not
-
+	cout << "enter the triangle :"<<endl;
+	cin >> num1 >> num2 >> num3;
 	if (valid_triangle(num1, num2, num3) == 1)
 		cout << " possible to make triangle \n";
 	else
