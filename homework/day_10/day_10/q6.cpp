@@ -54,7 +54,9 @@ int num_of_digits(int );
 int findmiddle_num(int,int,int);
 void leapYear(int);
 int second_lastdigit(int);
-//int sum_digits_single(int);
+int convertHrs_to_min(int,int);
+bool even(int,int);
+int newNum(int, int);
 
 //int fib(int);
 //int countZeros(long long int);
@@ -76,6 +78,27 @@ int main()
 
 	// 2nd last digit
 	cout << second_lastdigit(yr)<<endl;
+
+	// convert to min or seconds: choose 0 or 1
+	int ch;
+	cout << "choose \n 0. to convert to min  and\n 1. convert to seconds:\n";
+	cin >> ch;
+	cout << "enter the no of hours to be converted to : " << ch;
+	cin >> num1;
+	res=convertHrs_to_min( num1, ch);
+	cout << "ans :" << res;
+
+
+	// find sum of two no is even or odd
+	cout << "enter 2 no.s to be checked for even or odd:\n";
+	cin >>num1 >> num2;
+	if (even(num1, num2) == 1)
+		cout << "\nits even\n ";
+	else
+		cout << "\n its odd .\n";
+
+
+
 
 
 
@@ -152,5 +175,36 @@ int second_lastdigit(int n)
 {
 	n /= 10;
 	return n % 10;
+
+}
+
+int convertHrs_to_min(int val, int ch)
+{
+	int min, seconds;
+	min = val * 60;
+	seconds = val * 60 * 60;
+	if (ch == 0)
+		return min;
+	else return seconds;
+
+
+}
+
+bool even(int v1, int v2)
+{
+	if ((v1 + v2) % 2 == 0)
+		return true;
+	else return false;
+
+
+}
+
+int newNum(int firstNumber, int secondNumber)
+{
+	int lastDigit, firstDigit;
+	lastDigit = (firstNumber % 10);
+	while (secondNumber < 10)
+
+		firstDigit = secondNumber / 10;
 
 }
