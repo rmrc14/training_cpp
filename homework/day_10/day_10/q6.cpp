@@ -57,8 +57,7 @@ int second_lastdigit(int);
 int convertHrs_to_min(int,int);
 bool even(int,int);
 int newNum(int, int);
-
-//int fib(int);
+void swapNum(int&,int&);
 //int countZeros(long long int);
 
 using namespace std;
@@ -97,8 +96,16 @@ int main()
 	else
 		cout << "\n its odd .\n";
 
+	// create new number
+	res=newNum(num1, num2);
+	cout << "\n the new number : " << res << endl;
 
+	// swap 2 numbers by refrence
+	cout << " enter 2 no.s \n";
+	cin >> num1 >> num2;
+	swapNum(num1, num2);
 
+	cout << " the value of num1 is changed to " << num1 << "\n the value of num2 is changed to :" << num2 << endl;
 
 
 
@@ -204,7 +211,19 @@ int newNum(int firstNumber, int secondNumber)
 	int lastDigit, firstDigit;
 	lastDigit = (firstNumber % 10);
 	while (secondNumber < 10)
+	{
+		secondNumber = secondNumber / 10;
+	}
+	firstDigit = secondNumber;
+	return lastDigit * 10 + firstDigit;
 
-		firstDigit = secondNumber / 10;
+}
+
+void swapNum(int& a, int& b)
+{
+	a = a + b;
+	b = a - b;
+	a = a - b;
+
 
 }
