@@ -58,6 +58,8 @@ int convertHrs_to_min(int,int);
 bool even(int,int);
 int newNum(int, int);
 void swapNum(int&,int&);
+int power(int, int);
+bool valid_triangle(int, int, int);
 //int countZeros(long long int);
 
 using namespace std;
@@ -107,7 +109,11 @@ int main()
 
 	cout << " the value of num1 is changed to " << num1 << "\n the value of num2 is changed to :" << num2 << endl;
 
-
+	// power 
+	cout << " enter 2 no to calculate power :\n";
+	cin >> num1 >> num2;
+	res=power(num1, num2);
+	cout << "the power is: " << res << endl;
 
 	return 0;
 }
@@ -224,6 +230,27 @@ void swapNum(int& a, int& b)
 	a = a + b;
 	b = a - b;
 	a = a - b;
+
+
+}
+
+int power(int a, int b)
+{
+
+	if (b == 0)
+		return 1;
+	else
+		return  a * power(a, (b - 1));
+
+
+}
+
+bool valid_triangle(int n1, int n2, int n3)
+{
+	if (n1 + n2 + n3 == 180)
+		return true;
+	else
+		return false;
 
 
 }
