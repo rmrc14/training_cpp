@@ -12,30 +12,35 @@ using namespace std;
 
 
 
+int main()
+{
+	int a[] = { 11,13,12,15,8,6,4,3,7,1 };
+	int i, countOdd, countEven;
 
-int main() {
-    int a[] = { 11, 13, 12, 15, 8, 6, 4, 3, 7, 1 };
-    constexpr int noElems = sizeof(a) / sizeof(a[0]);  // Calculate number of elements in the array
+	constexpr int noElems = sizeof(a) / sizeof(a[0]);
+	int outputArr[noElems];
+	cout << "No of Elements present: " << noElems << endl;
 
-    int oddIndex = 0, evenIndex = noElems - 1;  // Pointers for odd and even numbers
+	for (i = 0, countOdd = 0;i < noElems;i++)
+	{
+		if (a[i] % 2 != 0) {
+			outputArr[countOdd] = a[i];
+			countOdd++;
+		}
+	}
 
-    // Rearrange elements in-place: odd numbers in the first half, even numbers in the second half
-    for (int i = 0; i < noElems; i++) {
-        if (a[i] % 2 != 0) {
-            a[oddIndex++] = a[i];  // Store odd numbers in the first half
-        }
-        else {
-            a[evenIndex--] = a[i];  // Store even numbers in the second half
-        }
-    }
+	for (i = 0, countEven = countOdd;i < noElems;i++)
+	{
+		if (a[i] % 2 == 0) {
+			outputArr[countEven] = a[i];
+			countEven++;
+		}
+	}
 
-    // Print the modified array
-    cout << "Array with odd numbers in the first half and even numbers in the second half: " << endl;
-    for (int i = 0; i < noElems; i++) {
-        cout << a[i] << " ";
-    }
-    cout << endl;
 
-    return 0;
+	for (i = 0;i < noElems;i++)
+		cout << outputArr[i] << endl;
+
+	return 0;
 }
 

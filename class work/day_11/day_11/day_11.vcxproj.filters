@@ -24,5 +24,8 @@
     <ClCompile Include="odd_even_array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="classwork.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
