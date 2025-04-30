@@ -45,6 +45,12 @@
     <ClCompile Include="logical_qs_8.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="logical_qs_9.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="logical_qs_10.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
