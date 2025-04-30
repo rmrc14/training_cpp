@@ -117,8 +117,10 @@ int main()
     {
        // cout << rowsum[i] << endl;
         if (rowsum[i] == rowsum[0])
+        {
             flag_row = 1;
-       
+            break;
+        }
     }
 
     //sum of columns
@@ -140,12 +142,15 @@ int main()
 
     for (int i = 0; i < r1; i++)// sets flag-row
     {
-       // cout << colsum[i] << endl;
+        // cout << colsum[i] << endl;
         if (colsum[i] == colsum[0])
+
+        {
             flag_col = 1;
+            break;
+        }
 
     }
-
 
     //sum of diagonals
     diagsum[r1];
@@ -158,7 +163,10 @@ int main()
        
             diagsum[i] += arr1[i][i];
             if (diagsum[i] == diagsum[0])
+            {
                 flag_diag = 1;
+                break;
+            }
         
     }
     if (flag_col == flag_row== flag_diag == 1)
