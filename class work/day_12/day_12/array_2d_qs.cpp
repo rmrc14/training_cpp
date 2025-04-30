@@ -67,6 +67,11 @@ All sums equal 34, confirming it’s a valid magic square.
 #define COL 5
 #define MAX 10
 
+bool row_sum(int a[8]) {
+
+}
+
+
 using namespace std;
 
 int main()
@@ -79,6 +84,8 @@ int main()
     int flag_row = 0;//int flag_row = 0; // changes to 1 when all rows sum are equal
     int flag_col = 0;
     int flag_diag = 0;
+    int sumTarget=0;
+
 
     cout << "Enter the row and column of matrix 1: ";
     cin >> r1 >> c1;
@@ -91,6 +98,11 @@ int main()
             cin >> arr1[i][j];
         }
     }
+
+    //calculate the sum of first row
+    for (int i = 0; i < r1; i++)
+        sumTarget += arr1[0][i];
+
 
     // sum of rows 
     rowsum[r1];

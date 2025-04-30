@@ -27,5 +27,11 @@
     <ClCompile Include="strings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="strlength.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="altstrings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
