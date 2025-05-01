@@ -27,6 +27,12 @@ int main()
 	return 0;
 }
 
-int sumOfSquares(int num)
+int sumOfSquares(int n)
 {
+	if (n == 0) {
+		return 0;
+	}
+	cout << n << "^2" << " + ";
+	return n * n + sumOfSquares(n - 1);
+	
 }

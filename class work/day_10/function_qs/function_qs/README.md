@@ -1,3 +1,3 @@
 # Function qs
 
-qs 2 need to be checked and do qs 5
+completed --->//qs 2 need to be checked(minor)
