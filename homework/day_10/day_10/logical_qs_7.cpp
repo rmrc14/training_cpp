@@ -19,44 +19,31 @@ int main() {
 	cin >> code;
 
 	int result = extractFirstNonZeroDigit(code);
-	if (result != -1) {
-		if (result % 2 == 0) {
-			cout << "Valid code! The first non-zero digit " << result << " is even." << endl;
-		}
-		else {
-			cout << "Invalid code! The first non-zero digit " << result << " is odd." << endl;
-		}
+	
+	if (result) 
+	{
+		cout << "Valid code! The first non-zero digit is even." << endl;
 	}
-	else {
-		cout << "Invalid code! No non-zero digits found." << endl;
+		
+	else
+	{
+		cout << "Invalid code! The first non-zero digit is odd." << endl;
 	}
+
+	
 
 	return 0;
 }
 
 int extractFirstNonZeroDigit(int num) {
-	int count = 0;
-	int tmp = num;
-	while (tmp >= 10) {  // used to get the right most element
-		tmp /= 10;  // Remove the last digit
-		count++;
+	while (num > 0) {
+		int digit = num % 10;
+		if (digit != 0) {
+			return digit % 2 == 0;
+		}
+		num /= 10;
 	}
-	
-	if (tmp % 2 == 0 && tmp != 0) {
-			return tmp;  
-		}
-	else
-		{
-			while (count > 0)
-			{
-				tmp = tmp * 10;
-				count--;
-			}
-			tmp = num - tmp;
-
-			extractFirstNonZeroDigit(tmp);  
-		}
-	
+	return false;
 	
 }
 
