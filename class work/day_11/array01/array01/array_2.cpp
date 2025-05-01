@@ -31,3 +31,43 @@ o/p
 4
 
 */
+
+#include<iostream>
+//#define MAX 50  used dynamic allocation using-- new and delete[] to free dynamic allocation
+using namespace std;
+
+int main() {
+    int size, sum;
+    cout << "Enter size of array: ";
+    cin >> size;
+
+    int* arr = new int[size];  // should be star /pointer  as-- base address
+
+    for (int i = 0; i < size; i++) 
+       cin >> arr[i];
+    
+
+    int totalSum = 0;
+    for (int i = 0; i < size; i++) {   // total sum of array
+        totalSum += arr[i];
+    }
+
+    int leftsum = 0;
+
+    for (int i = 0; i < size; i++) {
+        totalSum -= arr[i];            // minus the element to find equilibrium till n times or if exits
+
+        if (leftsum == totalSum) {
+            cout << "The equilibrium position is: " << i << endl;
+            delete[] arr;
+            return 0;
+        }
+
+        leftsum += arr[i]; //after condition checked need to add the element back to loop
+    }
+
+    cout << "No equilibrium position" << endl;
+
+    delete[] arr;
+    return 0;
+}

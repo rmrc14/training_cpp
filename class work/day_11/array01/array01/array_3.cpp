@@ -26,3 +26,35 @@ TESTCASE 2:
  Output:
  4 8
 */
+
+
+#include<iostream>
+using namespace std;
+
+int main() {
+    int size;
+    cout << "Enter size of array: ";
+    cin >> size;
+
+    int* arr = new int[size]; //initialised dynamically
+
+    cout << "Enter the elements of the array: ";
+    for (int i = 0; i < size; i++) 
+        cin >> arr[i];
+    
+
+    int maxFromRight = arr[size - 1];
+    cout << maxFromRight << " "; //as the rightmost element is always the leader
+
+    for (int i = size - 2; i >= 0; i--) // size-2 dont require the leader
+    { 
+        if (arr[i] > maxFromRight)        // first compares to the leader then continues the loop
+        {
+            cout << arr[i] << " ";
+            maxFromRight = arr[i];
+        }
+    }
+
+    delete[] arr;
+    return 0;
+}
