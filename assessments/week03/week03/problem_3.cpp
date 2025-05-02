@@ -12,7 +12,7 @@ Your task is to compute and print a list of counts corresponding to each element
 #include<iostream>
 #include<cstring>
 #define MAX 100
-int leader(int[],int);
+int smaller(int[],int);
 using namespace std;
 
 int main()
@@ -27,7 +27,7 @@ int main()
     for (int i = 0; i < size; i++)
         cin >> arr[i];
 
-    leader(arr, size);
+    smaller(arr, size);
 
 
 
@@ -36,7 +36,7 @@ int main()
 }
 
 
-int leader(int arr[], int size)
+int smaller(int arr[], int size)
 {
     
     
