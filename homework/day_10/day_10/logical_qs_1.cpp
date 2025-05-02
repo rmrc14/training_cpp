@@ -23,7 +23,7 @@ int main()
 	cout << "Smallest number is: " << smallestDigit(num);
 	return 0;
 
-	return 0;
+	
 }
 int smallestDigit(int num)
 {
