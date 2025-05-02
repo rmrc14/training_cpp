@@ -20,7 +20,7 @@ int main()
 {
 	int res;
 
-	char arr[MAX] = "he works at tcs";
+	char arr[MAX] = "he works at tcs";//"there are fruits in the basket";//"The sun is beautiful";//"We are playing football";  
 
 	for(int i=0 ; i<MAX&& arr[i]!='\0';i++) //output string
 		cout << arr[i];
