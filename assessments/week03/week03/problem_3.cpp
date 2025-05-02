@@ -1,6 +1,8 @@
 /*
 Problem Statement 3
-You are given an array A of size N containing positive integers. For each element in the array, count the number of elements to its right that are smaller than the current element.
+You are given an array A of size N containing positive integers.
+For each element in the array, count the number of elements to its right that are smaller than 
+the current element.
 
 Your task is to compute and print a list of counts corresponding to each element.
 

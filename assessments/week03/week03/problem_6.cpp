@@ -8,7 +8,7 @@ If the number of elements left at the end is less than K, reverse all of them as
 */
 
 #include<iostream>
-
+#define MAX 100
 int swap1(int[], int,int);
 using namespace std;
 
@@ -34,10 +34,19 @@ int main() {
 
 int swap1(int arr[], int size, int k)
 {   
-    
+    int sw[MAX];
     for (int i = 0;i < size;i++)
     {
-        if (k < arr[i+k])
+        if (k < arr[i + k])
+        {
+            for (int j = i;j < k;j++)
+            {
+                sw[i] = arr[i+k];
+                arr[i] = sw[j];
+            }
+            
+        }
+        
 
     }
     
