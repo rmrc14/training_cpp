@@ -15,32 +15,32 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pr_1.cpp">
+    <ClCompile Include="greater.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pr_7.cpp">
+    <ClCompile Include="greatestfive.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pr_3.cpp">
+    <ClCompile Include="even.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pr_4.cpp">
+    <ClCompile Include="ascii_char.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pr_5.cpp">
+    <ClCompile Include="consonants.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pr_6.cpp">
+    <ClCompile Include="isalpha.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pr_2.cpp">
+    <ClCompile Include="trim_function.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="anagram.cpp">
+    <ClCompile Include="climits.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="README.md" />
+    <ClCompile Include="excludevowels.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
