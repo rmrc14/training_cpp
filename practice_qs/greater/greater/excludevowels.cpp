@@ -1,7 +1,7 @@
 #include <iostream>
 
 #define MAX 100
-bool is_alpha(char);
+bool is_vowel(char);
 using namespace std;
 
 int main()
@@ -15,20 +15,19 @@ int main()
 	int i = 0,j= 0;
 	while (ch[i] != '\0')
 	{
-		if (!(is_alpha(ch[i])))
+		if (!(is_vowel(ch[i])))
 			tmp[j++] = ch[i];
 	
 			i++;
 	}
 	tmp[i] = '\0';
-	//for(int j=0;j<strlen(tmp);j++)
-//	cout << tmp[i];
+
 	cout << tmp;
 	return 0;
 
 }
 //This is cpp programming class
-bool is_alpha(char ch)
+bool is_vowel(char ch)
 {
 
 	if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')

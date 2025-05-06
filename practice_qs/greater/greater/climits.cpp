@@ -1,14 +1,15 @@
-/*
+
 #include <climits>
 #include <cstdint>
 #include <iomanip>
 #include <iostream>
+using namespace std;
 
 int main()
 {
     constexpr int w = 14;
-    std::cout << std::left;
-#   define COUT(x) std::cout << std::setw(w) << #x << " = " << x << '\n'
+    cout << left;
+#   define COUT(x) cout << setw(w) << #x << " = " << x << '\n'
 
     COUT( CHAR_BIT       );
     COUT( MB_LEN_MAX     );
@@ -40,4 +41,3 @@ int main()
     COUT( WINT_MAX       );
 }
 
-*/

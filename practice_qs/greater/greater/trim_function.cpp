@@ -20,8 +20,9 @@ int main()
 	//ltrim(ch);
 	//cout << ch<<endl;
 	rtrim(ch);
-	cout << ch<<"checkingspaces";
+	cout << ch<<"checkingspaces"<<endl;
 	trim(ch);
+	cout << ch << "checkingspaces";
 	return 0;
 
 }
@@ -52,7 +53,7 @@ char* ltrim(char* ch)
 char* rtrim(char* ch)
 {
 	int size = strlen(ch);
-	int i = size-1;
+	int i = size-1;   // index of strlen for hello is 5 so 5-1 need to be done for array
 
 	while (i!=0)
 	{
@@ -61,20 +62,23 @@ char* rtrim(char* ch)
 		i--;
 
 	}
-	if (i == size)
+	if (i == size)   //checks spaces if not found returns
 		return ch;
 	else
 	{
-		ch[i+1 ] = '\0';
+		ch[i+1 ] = '\0';  //adds null to the end
 		return ch;
 	}
 
 }
 
 
-char* trim(char*)
+char* trim(char* ch)
 {
+	rtrim(ch);
+	ltrim(ch);
 
+	return ch;
 
 
 }
