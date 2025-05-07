@@ -1,4 +1,4 @@
-// removed duplicates
+// removed duplicates  { -20,400 ,54,-20,-20 }
 #include<iostream>
 #define MAX 10
 int unique(int[],int);

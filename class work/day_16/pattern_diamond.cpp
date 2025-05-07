@@ -42,9 +42,9 @@ void display(int n)
 		cout << endl;
 
 	}
-	for ( i = n-1; i >0; i--)
+	for ( i = n-2; i >0; i--)
 	{
-        for ( j = 1;j <=n-i;j++)
+        for ( j = 1;j <=n-i-1;j++)
             cout << " ";
       
 		for ( j = 1;j <= 2*i-1;j++)

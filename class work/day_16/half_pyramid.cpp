@@ -27,15 +27,16 @@ void display(int n)
 {
 
     int i, j, k,l,m;
-    for ( i = 0; i < (n/2)+1; i++)
+    for (i = 0; i < n; i++)
     {
-        for (j = 0;j < (n/2)-i ;j++)
+        for (j = 1;j < n - i;j++)
             cout << " ";
 
-        for ( k = j;k < (n / 2);k++)
+
+        for (j = 1;j <= 2 * i - 1;j++)
             cout << "*";
-        for (m = j+1;m < n /2;m++)
-            cout << "*";
+
+
         cout << endl;
 
     }
