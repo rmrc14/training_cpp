@@ -77,28 +77,38 @@ void getword(char* c, int s)
     }
 
 
-   // char sent_reversed[s];
-
-    /*for (int x = 0; x <= j; x++)
+    //char sent_reversed[MAX];
+    
+    
+    /*char str[MAX];
+    int x;
+    for ( x = 0; x <= j; x++)
     {
-        for(int y=0;y<=s;y++)
+       int wsize= stringlength(result[x]);
+        for(int y=0;y<wsize-1;y++)
         {
-            
+            str[y]=result[x][y];
         }
+        str[wsize]=' ';
     }
-    if(x==j)
-            {
-                sent_reversed[s]
-            }
-    */
+    if (x == j)
+    {
+        str[s] = '\0';
+    }
+    
+   
+
+        cout << str ;*/
+
+    
 
 
     // Print the reversed words
     for (int x = 0; x < j; x++) 
     {
-        {
+        
             cout << result[x] << " ";
-        }
+        
     }
 
 
