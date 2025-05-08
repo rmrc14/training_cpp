@@ -18,5 +18,8 @@
     <ClCompile Include="freqalpha.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="anagram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
