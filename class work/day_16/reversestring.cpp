@@ -80,7 +80,7 @@ void getword(char* c, int s)
     //char sent_reversed[MAX];
     
     
-    /*char str[MAX];
+    char str[MAX];
     int x;
     for ( x = 0; x <= j; x++)
     {
@@ -98,18 +98,18 @@ void getword(char* c, int s)
     
    
 
-        cout << str ;*/
+        cout << str ;
 
     
 
 
     // Print the reversed words
-    for (int x = 0; x < j; x++) 
+  /*  for (int x = 0; x < j; x++) 
     {
         
             cout << result[x] << " ";
         
-    }
+    }*/
 
 
 

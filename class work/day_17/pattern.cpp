@@ -7,6 +7,7 @@
 void display(int);
 void display2(int);
 void display3(int);
+void display4(int);
 
 
 using namespace std;
@@ -20,7 +21,8 @@ int main()
 	display2(num);
 	cout << endl;
 	display3(num);
-
+	cout << endl;
+	display4(num);
     return 0;
 }
 
@@ -100,6 +102,48 @@ void display3(int n)
 
 		for (j = 1;j <= 2 * i;j++)
 			cout << "*";
+
+		cout << endl;
+
+	}
+}
+
+
+void display4(int n)
+{
+	int i, j;
+	for (i = 0; i < n; i++)
+	{
+		
+		for (j =0;j < 2*i;j++)
+			cout << " ";
+		for (j = 1;j < 2 * (n - i);j++)
+			cout << "* ";
+		
+		
+
+
+
+
+		
+
+		cout << endl;
+
+	}
+
+
+	for (i = 0; i < n; i++)
+	{
+		for (j = 1;j < 2 * (n - i) - 1;j++)
+			cout << " ";
+		for (j = 0;j <= 2 * i;j++)
+			cout << "* ";
+
+
+
+
+		/*for (j = 1;j <= 2 * i;j++)
+			cout << "*";*/
 
 		cout << endl;
 
