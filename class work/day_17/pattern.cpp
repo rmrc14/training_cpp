@@ -9,7 +9,8 @@ void display2(int);
 void display3(int);
 void display4(int);
 void display5(int);
-
+void display6(int);
+void display7(int);
 
 using namespace std;
 int main()
@@ -26,6 +27,10 @@ int main()
 	display4(num);
 	cout << endl;
 	display5(num);
+	cout << endl;
+	display6(num);
+	cout << endl;
+	display7(num);
     return 0;
 }
 
@@ -168,4 +173,69 @@ void display5(int n)
 		cout << endl;
 
 	}
+}
+
+
+void display6(int n)
+{
+	int i, j;
+	for (i = n - 1; i >= 0; i--)
+	{
+		for (j = 1; j < n - i+1; j++)
+			cout << "*";
+		for (j = 0; j <= 2 * i; j++)
+			cout << " ";
+		
+		for (j = 0; j <= n- i-1; j++)
+			cout << "*";
+		cout << endl;
+	}
+
+
+
+
+	for (i = 0; i < n; i++)
+	{
+
+		for (j = 1;j < n - i;j++)
+			cout << "*";
+		for (j = 0;j <= 2 * i+2;j++)
+			cout << " ";
+		for (j = 1;j <= n - i-1;j++)
+			cout << "*";
+
+		cout << endl;
+
+	}
+}
+
+
+
+void display7(int n)
+{
+	
+	int i, j, k;
+
+	for (i = 0;i <= n;i++) // rows
+	{
+		for (j = 0;j <= i;j++)
+			cout << "* ";
+		for (k = 0;k < ((2 * n) - (2 * i));k++)
+			cout << "  ";
+		for (j = 0;j <= i;j++)
+			cout << "* ";
+		cout << endl;
+	}
+
+	for (i = n-1;i >=0;i--) // rows
+	{
+		for (j = 0;j <= i;j++)
+			cout << "* ";
+		for (k = 0;k < ((2 * n) - (2 * i));k++)
+			cout << "  ";
+		for (j = 0;j <= i;j++)
+			cout << "* ";
+		cout << endl;
+	}
+
 }
