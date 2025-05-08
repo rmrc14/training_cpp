@@ -27,8 +27,8 @@ void display(int n)
 		
 		for (j = 1;j < n - i;j++)
 			cout << " ";
-		for (j = 1;j <= 2 * i - 1;j++)
-			cout << "*";
+		for (j = 0;j <= i ;j++)
+			cout << "* ";
 
 		
 
