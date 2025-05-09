@@ -1,17 +1,39 @@
 #include<iostream>
-#define MAX 10
+#define MAX 11
 
-void palindromeString(char[]);
+bool palindromeString(char[]);
 
 
 using namespace std;
 int main()
 {
 	char ch[MAX];
+	
+	cin.getline(ch, 10);
+	cout << ch << "-----\n";
 
+	if (palindromeString(ch))
+	{
+		cout << "palindrome: " << ch<<endl;
 
-	palindromeString(ch);
+	}
+	else
+	{
+		cout << "not palindrome: " << ch;
+	}
 	cout << endl;
 	
 	return 0;
+}
+bool palindromeString(char str[])
+{
+	int i = 0, len = strlen(str);
+
+	for (int i = 0; i < len/2; i++)
+	{
+		if (str[i] != str[len - i - 1])
+			return false;
+	}
+		
+	return true;
 }

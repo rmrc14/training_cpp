@@ -1,4 +1,4 @@
-#include<iostream>
+﻿#include<iostream>
 
 void display(int);
 void pascaltriangle(int);
@@ -33,16 +33,31 @@ void display(int n)
 	}
 }
 
-void pascaltriangle(int n)
+void pascaltriangle(int n)  //(n+1)C(r) = (n)C(r - 1) + (n)C(r)  
+								//nCr = n! / (r! * (n-r)!)   and C(n,k)=C(n,n−k)
 {
-	int i, j, c = 1;
-	for (i = 0; i < n; i++)
-	{
+	for (int i = 0; i < n; i++) {
+		// Print spaces 
+		
+		for (int space = 0; space < n - i - 1; space++)
+			cout << "  ";
+		int res = 1;  // First element of every row is 1
 
-		for (j = 1;j < 2*n+1;j++)
-			cout << j;
+		for (int k = 0; k <= i; k++) {
+			// Print current res
+			cout << res << "   ";
+
+			// Compute next coefficient using property:
+			// C(i, k+1) = C(i, k) * (i - k) / (k + 1)
+			//res = res * (i - k) / (k + 1);
+
+			res *= (i - k);
+			res /= (k + 1);
+		}
 
 		cout << endl;
-
+		
 	}
+	
+
 }

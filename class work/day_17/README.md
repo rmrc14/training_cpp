@@ -2,4 +2,4 @@
 
 
 palindrome string
-pascal triangle
+pascal triangle--  in - pattern_number file_
