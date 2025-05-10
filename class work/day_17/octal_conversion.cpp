@@ -26,7 +26,7 @@ int main()
 	// decimal to octal
 
 	decimalTooctal(55);
-
+	
 
 
 	return EXIT_SUCCESS;
