@@ -4,28 +4,34 @@
 
 
 #include<iostream>
+#define MAX 100
 
-
-void pattern(int);
+void revstring(char[],int);
 
 
 using namespace std;
 int main()
 {
+	char c[MAX];
 
-	int n = 5;
+	cin.getline(c, 99);
 
-	pattern(n);
+	int s = strlen(c);
+	
+	revstring(c,s);
 
 	return 0;
 }
-void pattern(int num)
+void revstring(char ch[], int size)
 {
-	int i, j, k = 1;
-	for (i = 0;i < num;i++)
+	int tmp;
+	int i = 0,j= size - 1;
+	while (i<j)
 	{
-		for (j = 0;j < i;j++)
-			cout << k++;
-		cout << endl;
+		tmp = ch[i];
+		ch[i++] = ch[j];
+		ch[j--] = tmp;
+		
 	}
+	cout << "reversed string :" << ch;
 }
