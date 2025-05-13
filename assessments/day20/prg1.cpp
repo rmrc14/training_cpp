@@ -13,7 +13,7 @@ int menuDisplay(void);
 int adding(int numBooksAdded);
 int renting(char name[], int len);
 int searching(char name[], int len, int choice);
-//int deletion(char name[], int len);
+int deletion(char name[], int len);
 int displaysearching(void);
 void displaybook(int iv);
 int returning_book(char name[], int len);
@@ -52,7 +52,7 @@ int menuDisplay(void)
 {
 	int choice;
 	cout << "\t0.\t listing books " << endl;
-	cout << "\t1.\tsearch " << endl;
+	cout << "\t1.\t search " << endl;
 	cout << "\t2.\t returning book " << endl;
 	cout << "\t3.\t renting " << endl;
 	cout << "\t4.\t deletion " << endl;
@@ -68,15 +68,17 @@ int adding(int numBooksAdded)
 {
 	numBooks += numBooksAdded;
 
-
+	//scanf(" ");
 	for (int i = 0;i < numBooksAdded;i++) // add s  eg 5 books
 	{
 		// get author ip 
 		cout << "enter the author :" << endl;
 		//cout << " " << endl;
 		//scanf(" ");
+		
 		cin.getline(l1[i].author, 99);
-
+		if (strlen(l1[i].author)<=1)
+			cin.getline(l1[i].author, 99);
 		// get title ip
 		cout << "enter the title of book :" << endl;
 		cin.getline(l1[i].title, 99);
@@ -94,6 +96,20 @@ int adding(int numBooksAdded)
 
 }
 
+void displaybook(int iv)
+{
+	for (int i =0 ;i < iv;i++)
+	{
+		cout << l1[i].author << endl;
+		cout << l1[i].title << endl;
+		cout << l1[i].genre << endl;
+		if (l1[i].flag == false)
+			cout << "available to rent" << endl;
+		else
+			cout << "not available to rent" << endl;
+	}
+
+}
 
 void listSwitch(int num)
 {
@@ -113,6 +129,7 @@ void listSwitch(int num)
 		cout << "enter the name of the book to be rented " << endl;
 		res = searching(name1, strlen(name1), displaysearching());
 		displaybook(res);
+		//res = searching(name1, strlen(name1), displaysearching());
 		//searching(name1,strlen(name1), choice2);
 		// display all the value in index location received from searching using another function
 
@@ -128,9 +145,9 @@ void listSwitch(int num)
 		renting(name1, strlen(name1));
 		break;
 	case 4: //deletion
-		/*cout << "get the title of book to be deleted:" << endl;
+		cout << "get the title of book to be deleted:" << endl;
 		cin.getline(name1, 99);
-		deletion(name1, strlen(name1)); */
+		deletion(name1, strlen(name1)); 
 		break;
 	case 5: //updating not required
 		//updating();
@@ -188,6 +205,12 @@ int returning_book(char name[], int len)
 // and also the next content in l1[] is brought occupied 
 int deletion(char name[], int len) // check error
 {
+	if (strlen(name) <= 1)
+	{
+		cin.getline(name, 99);
+		len = strlen(name);
+	}
+
 	int res = searching(name, len, 1);
 	if (res == -1)
 		cout << "book not found" << endl;
@@ -228,20 +251,6 @@ int displaysearching()
 }
 
 
-void displaybook(int iv)
-{
-	for (int i = iv;i < iv;i++)
-	{
-		cout << l1[i].author << endl;
-		cout << l1[i].title << endl;
-		cout << l1[i].genre << endl;
-		if (l1[i].flag == false)
-			cout << "available to rent" << endl;
-		else
-			cout << "not available to rent" << endl;
-	}
-
-}
 
 
 int searching(char name[], int size, int choice)
