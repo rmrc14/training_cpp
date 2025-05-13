@@ -1,15 +1,15 @@
 #include "libmgt.h"
-#include "functions.cpp"
+#include "functions_required.cpp"
 
 
 int main()
 {
 	
-	int ret;
+	//int ret;
 
 	//adding(num);
 
-	ret=menuDisplay();
+	menuDisplay();
 
 	return 0;
 }

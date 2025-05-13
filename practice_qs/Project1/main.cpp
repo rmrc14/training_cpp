@@ -1,62 +1,41 @@
-#include "libmgt.h"
+#include<iostream>
+#define MAX 100
+static int numBooks = 0;
 
+using namespace std;
 
-void listSwitch(int num)
+int menuDisplay(void);
+int adding(int numBooksAdded);
+int renting(char name[], int len);
+int searching(char name[], int len, int choice);
+//int deletion(char name[], int len);
+int displaysearching(void);
+void displaybook(int iv);
+int returning_book(char name[], int len);
+void listSwitch(int cases);
+//int adding(int);
+
+struct library
 {
-	int n;
-	char name1[MAX];
-	int choice2=-1;
-	int res;
-	switch (num)
-	{
-	case 0: //listing books
-		//listing();
-			displaybook(numBooks);
+	char author[MAX];
+	char title[MAX];
+	char genre[20];
+	bool flag;
+}l1[MAX];
 
-			break;
-	case 1: //search
-		
-		cout << "enter the name of the book to be rented " << endl;
-		res = searching(name1,strlen(name1),displaysearching());
-		displaybook(res);
-		//searching(name1,strlen(name1), choice2);
-		// display all the value in index location received from searching using another function
 
-		break;
-	case 2: //returning book 
-		
 
-		returning_book(name1, strlen(name1));
-		break;
-	case 3: //renting
-		cout << "enter the name of the book to be rented "<<endl;
-		cin.getline(name1, 99);
-		renting(name1,strlen(name1));
-		break;
-	case 4: //deletion
-		/*cout << "get the title of book to be deleted:" << endl;
-		cin.getline(name1, 99);
-		deletion(name1, strlen(name1)); */
-		break;
-	case 5: //updating not required
-		//updating();
-		break;
-	case 6: //adding ()
+int main()
+{
+
+	int ret;
+
+	//adding(num);
+
 	
-		cout << "number of books to be added";
-		cin >> n;
-		adding(n);
-		menuDisplay();
-		break;
-		
-	case 7: //exit ()
-
-		exit(0);
-
-	}
+	listSwitch(menuDisplay());
+	return 0;
 }
-
-
 int menuDisplay(void)
 {
 	int choice;
@@ -72,19 +51,18 @@ int menuDisplay(void)
 	return choice;
 }
 
-
 // adding content int library
 int adding(int numBooksAdded)
 {
-	numBooks+= numBooksAdded;
-	
+	numBooks += numBooksAdded;
 
-	for(int i=0;i< numBooksAdded;i++) // add s  eg 5 books
+
+	for (int i = 0;i < numBooksAdded;i++) // add s  eg 5 books
 	{
 		// get author ip 
 		cout << "enter the author :" << endl;
-		cin.getline(l1[i].author,99);
-		
+		cin.getline(l1[i].author, 99);
+
 		// get title ip
 		cout << "enter the title of book :" << endl;
 		cin.getline(l1[i].title, 99);
@@ -92,23 +70,78 @@ int adding(int numBooksAdded)
 		// get genre ip
 		cout << "enter the genre of book :" << endl;
 		cin.getline(l1[i].genre, 19);
-		
+
 
 	}
 	cout << "updated the list" << endl;
 
-	
+
 	return 0;
 
 }
 
 
+void listSwitch(int num)
+{
+	int n;
+	char name1[MAX];
+	int choice2 = -1;
+	int res;
+	switch (num)
+	{
+	case 0: //listing books
+		//listing();
+		displaybook(numBooks);
+
+		break;
+	case 1: //search
+
+		cout << "enter the name of the book to be rented " << endl;
+		res = searching(name1, strlen(name1), displaysearching());
+		displaybook(res);
+		//searching(name1,strlen(name1), choice2);
+		// display all the value in index location received from searching using another function
+
+		break;
+	case 2: //returning book 
+
+
+		returning_book(name1, strlen(name1));
+		break;
+	case 3: //renting
+		cout << "enter the name of the book to be rented " << endl;
+		cin.getline(name1, 99);
+		renting(name1, strlen(name1));
+		break;
+	case 4: //deletion
+		/*cout << "get the title of book to be deleted:" << endl;
+		cin.getline(name1, 99);
+		deletion(name1, strlen(name1)); */
+		break;
+	case 5: //updating not required
+		//updating();
+		break;
+	case 6: //adding ()
+
+		cout << "number of books to be added";
+		cin >> n;
+		adding(n);
+		menuDisplay();
+		break;
+
+	case 7: //exit ()
+
+		exit(0);
+
+	}
+}
+
 // renting the content in library changes the ch value to 'r' to indicate rented 'a' otherwise
 int renting(char name[], int len)
 {
-	int res = searching(name, len,1);
+	int res = searching(name, len, 1);
 	if (res == -1)
-		cout << "book not found"<<endl;
+		cout << "book not found" << endl;
 	else
 	{
 		l1[res].flag = true;
@@ -147,9 +180,9 @@ int deletion(char name[], int len) // check error
 	{
 		cout << "count of book :" << numBooks;
 		numBooks--;
-		for(int i=res;i<numBooks+1;i++)
+		for (int i = res;i < numBooks + 1;i++)
 		{
-			for(int j=0;j<len;j++)
+			for (int j = 0;j < len;j++)
 			{
 				l1[i].author[j] = l1[i + 1].author[j];
 
@@ -187,7 +220,7 @@ void displaybook(int iv)
 		cout << l1[i].author << endl;
 		cout << l1[i].title << endl;
 		cout << l1[i].genre << endl;
-		if(l1[i].flag==false)
+		if (l1[i].flag == false)
 			cout << "available to rent" << endl;
 		else
 			cout << "not available to rent" << endl;

@@ -1,0 +1,29 @@
+purpose:
+
+	library management system
+
+Goal:
+
+ (adding ,updating ,deleting ,search ,listing, renting ,returning)
+
+
+
+Prerequisites:
+
+library management system :
+
+1. display menu - 
+
+	where all the choices like(adding ,updating ,deleting ,search ,listing, renting ,returning)
+
+2. adding - 
+
+	where all the values of struct library 
+			
+		struct library 
+		char	name author	
+		char	title
+		bool	rented or not
+			
+3. 
+			
