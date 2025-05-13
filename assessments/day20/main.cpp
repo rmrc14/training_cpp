@@ -3,6 +3,12 @@
 
 int main()
 {
+	library l1[MAX];
+	int num;
+	cin >> num;
+
+	adding(num);
+
 	menuDisplay();
 }
 

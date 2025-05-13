@@ -1,7 +1,8 @@
 #include "libmgt.h"
 
-void menuDisplay(void)
+int menuDisplay(void)
 {
+	int choice;
 	cout << "\t0.\t listing books " << endl;
 	cout << "\t1.\tsearch " << endl;
 	cout << "\t2.\t returning book " << endl;
@@ -10,6 +11,8 @@ void menuDisplay(void)
 	cout << "\t5.\t updating " << endl;
 	cout << "\t6.\t adding " << endl;
 	cout << "\t7.\t exit () " << endl;
+	cin >> choice;
+	return choice;
 }
 
 void listSwitch(int num)
@@ -36,7 +39,9 @@ void listSwitch(int num)
 		renting(name1,strlen(name1));
 		break;
 	case 4: //deletion
-		deletion();
+		cout << "get the title of book to be deleted:" << endl;
+		cin.getline(name1, 99);
+		deletion(name1, strlen(name1)); 
 		break;
 	case 5: //updating not required
 		//updating();
@@ -115,4 +120,23 @@ int returning_book(char name[], int len)
 	}
 
 	return 0;
+}
+
+int deletion(char name[], int len)
+{
+	int res = searching(name, len, 1);
+	if (res == -1)
+		cout << "book not found" << endl;
+	else
+	{
+		l1[res].author = "\0";
+		l1[res].title = "\0";
+		l1[res].ch = 'N';
+		cout << l1[res].title << " have deleted the book" << endl;
+
+	}
+
+	return 0;
+
+
 }

@@ -5,16 +5,20 @@ static int numBooks = 0;
 
 using namespace std;
 
-void menuDisplay(void);
+int menuDisplay(void);
 int adding(int numBooksAdded);
 int renting(char name[], int len);
 int searching(char name[], int len, int choice);
+int deletion(char name[], int len);
+
 //void listSwitch(int cases);
 //int adding();
 
-struct library {
+struct library 
+{
 	char author[MAX];
 	char title[MAX];
 	char genre[20];
 	char ch = 'a';
 }l1[MAX];
+
