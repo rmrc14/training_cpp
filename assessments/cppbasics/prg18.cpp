@@ -6,7 +6,7 @@
 */
 
 #include <iostream>
-
+#include <cmath>
 bool armstrong(int);
 
 using namespace std;

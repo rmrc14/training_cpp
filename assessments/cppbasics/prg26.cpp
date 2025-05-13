@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+#include<cstring>
 #include <cctype> // for tolower()
 
 using namespace std;

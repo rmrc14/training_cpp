@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include<math.h>
+#include<climits>
 //#define MAX 100
 
 

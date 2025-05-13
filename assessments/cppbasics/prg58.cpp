@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include<ctype.h>
+#include<cstring>
 #define MAX 100
 
 using namespace std;

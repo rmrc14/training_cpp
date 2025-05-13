@@ -4,6 +4,7 @@
 
 
 #include<iostream>
+#include<cstring>
 #define MAX 100
 
 void revstring(char[],int);

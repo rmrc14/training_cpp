@@ -5,6 +5,7 @@
 */
 
 #include<iostream>
+#include<cstring>
 #define MAX 11
 
 bool palindromeString(char[]);
