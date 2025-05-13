@@ -7,7 +7,8 @@ using namespace std;
 
 void menuDisplay(void);
 int adding(int numBooksAdded);
-int renting(char name, int len);
+int renting(char name[], int len);
+int searching(char name[], int len, int choice);
 //void listSwitch(int cases);
 //int adding();
 
@@ -16,4 +17,4 @@ struct library {
 	char title[MAX];
 	char genre[20];
 	char ch = 'a';
-};
+}l1[MAX];

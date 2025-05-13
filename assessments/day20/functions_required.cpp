@@ -26,18 +26,20 @@ void listSwitch(int num)
 		search();
 		break;
 	case 2: //returning book 
-		returning_book();
+		
+
+		returning_book(name1, strlen(name1));
 		break;
 	case 3: //renting
-		cout << "enter the books to be searched "<<endl;
+		cout << "enter the name of the book to be rented "<<endl;
 		cin.getline(name1, 99);
 		renting(name1,strlen(name1));
 		break;
 	case 4: //deletion
 		deletion();
 		break;
-	case 5: //updating
-		updating();
+	case 5: //updating not required
+		//updating();
 		break;
 	case 6: //adding ()
 	
@@ -59,7 +61,7 @@ int adding(int numBooksAdded)
 	numBooks+= numBooksAdded;
 	//int num = numBooks;
 
-	library l1[MAX];
+	//library l1[MAX];
 
 	for(int i=0;i< numBooksAdded;i++) // add s  eg 5 books
 	{
@@ -86,7 +88,31 @@ int adding(int numBooksAdded)
 
 int renting(char name[], int len)
 {
+	int res = searching(name, len,1);
+	if (res == -1)
+		cout << "book not found"<<endl;
+	else
+	{
+		l1[res].ch = 'R';
+		cout << l1[res].title << " have rented the book" << endl;
+
+	}
+
+	return 0;
+}
 
 
+int returning_book(char name[], int len)
+{
+	int res = searching(name, len, 1);
+	if (res == -1)
+		cout << "book not found" << endl;
+	else
+	{
+		l1[res].ch = 'A';
+		cout << l1[res].title << " have returned the book" << endl;
 
+	}
+
+	return 0;
 }
