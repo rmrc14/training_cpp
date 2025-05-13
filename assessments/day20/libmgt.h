@@ -9,16 +9,18 @@ int menuDisplay(void);
 int adding(int numBooksAdded);
 int renting(char name[], int len);
 int searching(char name[], int len, int choice);
-int deletion(char name[], int len);
-
-//void listSwitch(int cases);
-//int adding();
+//int deletion(char name[], int len);
+int displaysearching(void);
+void displaybook(int iv);
+int returning_book(char name[], int len);
+void listSwitch(int cases);
+int adding(int);
 
 struct library 
 {
 	char author[MAX];
 	char title[MAX];
 	char genre[20];
-	char ch = 'a';
+	bool flag;
 }l1[MAX];
 

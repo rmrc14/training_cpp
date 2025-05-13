@@ -1,15 +1,17 @@
 #include "libmgt.h"
-#include "functions_required.cpp"
+#include "functions.cpp"
+
 
 int main()
 {
-	library l1[MAX];
-	int num;
-	cin >> num;
+	
+	int ret;
 
-	adding(num);
+	//adding(num);
 
-	menuDisplay();
+	ret=menuDisplay();
+
+	return 0;
 }
 
 
