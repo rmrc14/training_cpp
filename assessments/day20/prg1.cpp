@@ -1,4 +1,9 @@
 #include<iostream>
+#include<cctype>
+#include<cstring>
+#include<stdlib.h>
+#include<stdio.h>
+
 #define MAX 100
 static int numBooks = 0;
 
@@ -32,10 +37,17 @@ int main()
 
 	//adding(num);
 
+	while(true)
+		listSwitch(menuDisplay());
+	
 
-	listSwitch(menuDisplay());
+
 	return 0;
 }
+
+
+
+
 int menuDisplay(void)
 {
 	int choice;
@@ -61,6 +73,8 @@ int adding(int numBooksAdded)
 	{
 		// get author ip 
 		cout << "enter the author :" << endl;
+		//cout << " " << endl;
+		//scanf(" ");
 		cin.getline(l1[i].author, 99);
 
 		// get title ip
@@ -71,7 +85,7 @@ int adding(int numBooksAdded)
 		cout << "enter the genre of book :" << endl;
 		cin.getline(l1[i].genre, 19);
 
-
+		l1[i].flag = false;
 	}
 	cout << "updated the list" << endl;
 
@@ -126,7 +140,8 @@ void listSwitch(int num)
 		cout << "number of books to be added";
 		cin >> n;
 		adding(n);
-		menuDisplay();
+		//listSwitch(menuDisplay());
+
 		break;
 
 	case 7: //exit ()
