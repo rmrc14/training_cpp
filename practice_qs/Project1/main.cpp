@@ -1,4 +1,10 @@
 #include<iostream>
+#include<cctype>
+#include<cstring>
+#include<stdlib.h>
+#include<stdio.h>
+
+
 #define MAX 100
 static int numBooks = 0;
 
@@ -8,12 +14,12 @@ int menuDisplay(void);
 int adding(int numBooksAdded);
 int renting(char name[], int len);
 int searching(char name[], int len, int choice);
-//int deletion(char name[], int len);
+int deletion(char name[], int len);
 int displaysearching(void);
 void displaybook(int iv);
 int returning_book(char name[], int len);
 void listSwitch(int cases);
-//int adding(int);
+
 
 struct library
 {
@@ -32,15 +38,25 @@ int main()
 
 	//adding(num);
 
-	
-	listSwitch(menuDisplay());
+	while (true)
+	{
+		listSwitch(menuDisplay());
+	}
+		
 	return 0;
 }
+
+
+
+
+
+
+
 int menuDisplay(void)
 {
 	int choice;
 	cout << "\t0.\t listing books " << endl;
-	cout << "\t1.\tsearch " << endl;
+	cout << "\t1.\t search " << endl;
 	cout << "\t2.\t returning book " << endl;
 	cout << "\t3.\t renting " << endl;
 	cout << "\t4.\t deletion " << endl;
@@ -48,6 +64,7 @@ int menuDisplay(void)
 	cout << "\t6.\t adding " << endl;
 	cout << "\t7.\t exit () " << endl;
 	cin >> choice;
+	cin.ignore();
 	return choice;
 }
 
@@ -61,16 +78,20 @@ int adding(int numBooksAdded)
 	{
 		// get author ip 
 		cout << "enter the author :" << endl;
+		cin.ignore();
 		cin.getline(l1[i].author, 99);
 
 		// get title ip
 		cout << "enter the title of book :" << endl;
+		cin.ignore();
 		cin.getline(l1[i].title, 99);
 
 		// get genre ip
 		cout << "enter the genre of book :" << endl;
+		cin.ignore();
 		cin.getline(l1[i].genre, 19);
 
+		l1[i].flag = false;
 
 	}
 	cout << "updated the list" << endl;
@@ -90,13 +111,14 @@ void listSwitch(int num)
 	switch (num)
 	{
 	case 0: //listing books
-		//listing();
+		
 		displaybook(numBooks);
 
 		break;
 	case 1: //search
 
 		cout << "enter the name of the book to be rented " << endl;
+		cin.ignore();
 		res = searching(name1, strlen(name1), displaysearching());
 		displaybook(res);
 		//searching(name1,strlen(name1), choice2);
@@ -110,13 +132,15 @@ void listSwitch(int num)
 		break;
 	case 3: //renting
 		cout << "enter the name of the book to be rented " << endl;
+		cin.ignore();
 		cin.getline(name1, 99);
 		renting(name1, strlen(name1));
 		break;
 	case 4: //deletion
-		/*cout << "get the title of book to be deleted:" << endl;
+		cout << "get the title of book to be deleted:" << endl;
+		cin.ignore();
 		cin.getline(name1, 99);
-		deletion(name1, strlen(name1)); */
+		deletion(name1, strlen(name1));
 		break;
 	case 5: //updating not required
 		//updating();
@@ -215,7 +239,7 @@ int displaysearching()
 
 void displaybook(int iv)
 {
-	for (int i = iv;i < iv;i++)
+	for (int i = 0;i < iv;i++)
 	{
 		cout << l1[i].author << endl;
 		cout << l1[i].title << endl;
@@ -290,3 +314,9 @@ int searching(char name[], int size, int choice)
 
 	return -1;
 }
+
+
+
+
+
+
