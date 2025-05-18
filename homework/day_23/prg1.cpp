@@ -41,40 +41,103 @@ void menu();
 int add(PROD*, STOCK*);//done
 void list(PROD*, STOCK*);//done
 
+int update(PROD*, STOCK*,int);
+int delete_remove(PROD*);
+
+
+int search(const string&);
+
+//
+//                  MAIN()
+//
 
 int main()
 {
 	int choice;
-	int n, i, j;
+	int n, i;
+	string searchName;
+
 	while (true)
 	{
 		menu();
+		cout << "Enter your choice: ";
 		cin >> choice;
 		switch (choice)
 		{
 		case 0:
+
 			cout << "enter the number to be added";
 			cin >> n;
 			n = inv_id + n;
-			for (i = inv_id;i < n;i++)
+			if (!(n > 10))
 			{
-				add(&p[i], &s[i]);
+				for (i = inv_id;i < n;i++)
+				{
+					add(&p[i], &s[i]);
+					cout << endl;
+				}
+			}
+			else
+			{
+				cout << "inventory full:\n";
+				break;
 			}
 			break;
 		case 1:
+
 			for (i = 0;i < inv_id;i++)
 			{
 				list(&p[i], &s[i]);
+				cout << endl;
 			}
 			break;
+
 		case 2:
-			//update();
+
+			cout << "enter the id of Item/product to be edited " << endl;
+			cin >> n;
+			n = n - 1;
+			if (n < 0 || n >= inv_id || p[n].removeProd)
+			{
+				cout << "Invalid ID or product was removed.\n";
+				break;
+			}
+			update(&p[n],&s[n],n);
+			cout << " the content was updated:  " << endl;
+			list(&p[n], &s[n]);
+			cout << "\t -----------------------" << endl;
+
 			break;
-		case3:
+
+		case 3:
+
+			cout << "Enter product ID to delete: ";
+			cin >> n;
+			if (n < 0 || n >= inv_id || p[n].removeProd) 
+			{
+				cout << "Invalid ID or product already removed.\n";
+				break;
+			}
+			delete_remove(&p[n]);
+			cout << "Product removed from inventory.\n";
+			break;
+			
+		case 4:
+			
+			cout << "Enter product name to search: ";
+			cin >> searchName;
+			search(searchName);
+			break;
+
+			
+		case 5:
+
+			cout << "Exiting program.\n";
 			exit(0);
 			break;
 
 		default:
+
 			cout << "wrong choice :" << endl;
 			break;
 		}
@@ -90,7 +153,7 @@ int main()
 
 
 //
-// functions
+//    ----------------      functions          --------------------------------
 //
 void menu()
 {
@@ -99,7 +162,9 @@ void menu()
 	cout << "0. add()" << endl;
 	cout << "1. list()" << endl;
 	cout << "2. update()" << endl;
-	cout << "3. exit()" << endl;
+	cout << "3. Delete Product\n";
+	cout << "4. Search Product\n";
+	cout << "5. exit()" << endl;
 
 }
 
@@ -150,14 +215,15 @@ void list(PROD* p, STOCK* s)
 			cout << "product not available for sale as -- stock is empty" << endl;
 
 
-		cout << "========================================" << endl;
+		
 	}
 	else
 	{
-		cout << "the item/product was removed from the inventory. " << endl;
+		cout << "the item/product : "<< p->prod_id <<" was removed from the inventory. " << endl;
 	}
-
+	cout << "========================================" << endl;
 }
+
 
 int update(PROD* p, STOCK* s, int iv)
 {
@@ -178,3 +244,26 @@ int update(PROD* p, STOCK* s, int iv)
 
 
 
+int delete_remove(PROD* p)
+{
+	p->removeProd = true;
+
+
+
+	return EXIT_SUCCESS;
+}
+
+int search(const string& name)
+{
+	
+	for(int i=0;i< inv_id;i++)
+	{
+		if (!p[i].removeProd && p[i].prodName == name)
+		{
+			list(&p[i], &s[i]);
+			return i;
+		}
+	}
+	cout << "not found element:\n";
+	return -1;
+}

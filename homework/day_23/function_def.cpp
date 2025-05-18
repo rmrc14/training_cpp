@@ -61,13 +61,13 @@ void list(PROD* p, STOCK* s)
 			cout << "product not available for sale as -- stock is empty" << endl;
 
 
-		cout << "========================================" << endl;
+		
 	}
 	else
 	{
 		cout << "the item/product was removed from the inventory. " << endl;
 	}
-
+	cout << "========================================" << endl;
 }
 
 int update(PROD* p, STOCK* s,int iv)
