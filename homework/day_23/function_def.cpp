@@ -1,7 +1,7 @@
 #include"header.h"
 //#include<iostream>
 //
-// functions
+//    ----------------      functions          --------------------------------
 //
 void menu()
 {
@@ -10,7 +10,9 @@ void menu()
 	cout << "0. add()" << endl;
 	cout << "1. list()" << endl;
 	cout << "2. update()" << endl;
-	cout << "3. exit()" << endl;
+	cout << "3. Delete Product\n";
+	cout << "4. Search Product\n";
+	cout << "5. exit()" << endl;
 
 }
 
@@ -27,14 +29,14 @@ int add(PROD* p, STOCK* s)
 	cout << "enter quantity:";cin >> s->stockQuantity;
 	cout << "enter price:";cin >> s->stockPrice;
 
-	if(s->stockQuantity>0)
+	if (s->stockQuantity > 0)
 		p->prodIsAvailable = true;
 	else
 		p->prodIsAvailable = false;
 
 	p->removeProd = false;// creates the product 
-	
-	p->prod_id =s->s_prod_id = ++inv_id;
+
+	p->prod_id = s->s_prod_id = ++inv_id;
 
 
 
@@ -45,7 +47,7 @@ int add(PROD* p, STOCK* s)
 
 void list(PROD* p, STOCK* s)
 {
-	if(p.removeProd==false)
+	if (p->removeProd == false)
 	{
 		cout << "========================================" << endl;
 		cout << "prod name      :\t" << p->prodName << endl;
@@ -61,16 +63,17 @@ void list(PROD* p, STOCK* s)
 			cout << "product not available for sale as -- stock is empty" << endl;
 
 
-		
+
 	}
 	else
 	{
-		cout << "the item/product was removed from the inventory. " << endl;
+		cout << "the item/product : " << p->prod_id << " was removed from the inventory. " << endl;
 	}
 	cout << "========================================" << endl;
 }
 
-int update(PROD* p, STOCK* s,int iv)
+
+int update(PROD* p, STOCK* s, int iv)
 {
 	cout << "enter name:";cin >> p->prodName;
 	cout << "enter category:";cin >> p->prodCategory;
@@ -87,23 +90,28 @@ int update(PROD* p, STOCK* s,int iv)
 }
 
 
-//int delete_remove(PROD* p, int iv)
-//{
-//	p->removeProd = true;
-//
-//
-//
-//	return EXIT_SUCCESS;
-//}
-//
-//int search(string arr)
-//{
-//	int iv;
-//	for(int i=0;i< inv_id;i++)
-//	{
-//		if (strcmp(arr, p[iv].prodName) == 0)
-//			list(&p[iv], &s[iv]);
-//	}
-//
-//	return iv;
-//}
+
+
+int delete_remove(PROD* p)
+{
+	p->removeProd = true;
+
+
+
+	return EXIT_SUCCESS;
+}
+
+int search(const string& name)
+{
+
+	for (int i = 0;i < inv_id;i++)
+	{
+		if (!p[i].removeProd && p[i].prodName == name)
+		{
+			list(&p[i], &s[i]);
+			return i;
+		}
+	}
+	cout << "not found element:\n";
+	return -1;
+}
