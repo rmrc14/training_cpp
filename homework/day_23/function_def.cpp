@@ -1,4 +1,5 @@
 #include"header.h"
+using namespace std;
 //#include<iostream>
 //
 //    ----------------      functions          --------------------------------

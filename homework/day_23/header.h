@@ -2,7 +2,7 @@
 
 #include<iostream>
 #include<string>
-#include "function_def.cpp"
+
 
 
 
@@ -28,8 +28,8 @@ typedef struct stock
 
 }STOCK;
 
-PROD p[10];
-STOCK s[10];
+extern PROD p[10];
+extern STOCK s[10];
 
 void menu();
 

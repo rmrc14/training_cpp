@@ -2,16 +2,16 @@
 
 using namespace std;
 
-struct Date
-{
-	int day, month, year;
-};
+
 
 struct employee
 {
 	int emp_id;
 	string name;
-	Date joiningDate;
+	struct Date
+	{
+		int day, month, year;
+	}joiningDate;
 
 
 };
@@ -22,7 +22,7 @@ int main()
 	
 	e.emp_id = 101;
 	e.name = "remin";
-	e.joiningDate.day = 10;
+	e.joiningDate.day = 15;
 	e.joiningDate.month = 4;
 	e.joiningDate.year = 2025;
 
@@ -30,7 +30,7 @@ int main()
 	cout << e.joiningDate.day << "/" << e.joiningDate.month<< "/" << e.joiningDate.year << endl;
 
 
-
+	cout << sizeof(e) << "\t" << sizeof(e.joiningDate);
 
 
 	return 0;

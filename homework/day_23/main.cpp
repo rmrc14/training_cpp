@@ -10,6 +10,10 @@
 #include "header.h"
 
 
+using namespace std;
+
+PROD p[10];
+STOCK s[10];
 //
 //                  MAIN()
 //
@@ -19,6 +23,8 @@ int main()
 	int choice;
 	int n, i;
 	string searchName;
+
+	s1 = ()malloc();
 
 	while (true)
 	{
