@@ -2,7 +2,7 @@
 #include<string>
 using namespace std;
 
-class Student 
+class Student
 {
 protected:
 	int rollno;
@@ -12,8 +12,8 @@ protected:
 public:
 	void display(string str1)
 	{
-		cout << "hello: " <<str1<< endl;
-		cout <<"name:" << name << endl;
+		cout << "hello: " << str1 << endl;
+		cout << "name:" << name << endl;
 		cout << "rollno:" << rollno << endl;
 	}
 
