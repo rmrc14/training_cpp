@@ -10,6 +10,7 @@ handles overflow.
 
 #include<iostream>
 #include<string>
+#include <iomanip>  //for setfill setwidth
 
 using namespace std;
 
@@ -21,59 +22,98 @@ private:
 	unsigned int second;
 
 public:
-	void tick();
-	void setHours(int);
-	void setMinute(int);
-	void setSecond(int);
-
+	int tick();          //increment the time
+	int setHours(int);
+	int setMinute(int);
+	int setSecond(int);
+	void display();
 };
-void DigitalClock::setHours(int hr)
+void DigitalClock::display() 
+{
+	cout << setfill('0') << setw(2) << hours << ":"
+		<< setfill('0') << setw(2) << minute << ":"
+		<< setfill('0') << setw(2) << second << endl; //setfill fills the empty spaces with 0 and i.e eg 05 or 00 if there are nothing to print
+}
+int DigitalClock::setHours(int hr=24)
 {
 
 	hours = hr;
-
+	return EXIT_SUCCESS;
 }
-void DigitalClock::setMinute(int min) {
+int DigitalClock::setMinute(int min=59) {
 	minute = min;
+	return EXIT_SUCCESS;
 }
-void DigitalClock::setSecond(int sec)
+int DigitalClock::setSecond(int sec=59)
 {
 	second = sec;
+	return EXIT_SUCCESS;
 }
 
 
-void DigitalClock::tick()
+int DigitalClock::tick()
 {
-	while(true)
-	{
-		for (int i = 0;i < 24;i++)
+	/*while (true)
+	{*/
+		//for (int i = 0;i < 24;i++)
+		//{
+		//	
+		//		for (int j = 0;j < 60;j++)
+		//		{
+		//			
+		//				for (int k = 0;k < 60;k++)
+		//				{
+		//						cout << i << ":" << j << ":" << k << endl;
+		//					
+
+		//				}
+		//			
+		//		}
+		//	
+		//	//cout << "\r";
+		//}
+	//}
+
+		second++;
+		if (second == 60)
 		{
-			for (int j = 0;j < 60;j++)
+			second = 0;    //manages overflow
+			minute++;
+			if (minute == 60)
 			{
-				for (int k = 0;k < 60;k++)
+				minute = 0;
+				hours++;
+				if (hours == 24)
 				{
-					cout << i << ":" << j << ":" << k << endl;
-					
+					hours = 0;
 				}
 			}
-			//cout << "\r";
 		}
-	}
-
+		return EXIT_SUCCESS;
 }
 
 
 int main()
 {
 	DigitalClock C;
-	int h;
-	int m;
-	int s;
+	
+	int h = 24;
+	int m = 2;
+	int s = 12;
 
 
-	//setHours(h);
+	C.setHours(h);
+	C.setMinute(m);
+	C.setSecond(s);
 
-	C.tick();
+	for (int i = 0; i < 50; ++i) {
+		C.display(); //cals display
+		C.tick();     //increment time
+		
+	}
+
+
+	//C.tick();
 
 	return 0;
 }

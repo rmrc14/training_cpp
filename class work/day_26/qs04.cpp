@@ -21,27 +21,29 @@ private:
 	unsigned long int acc_no;
 	string acc_accountHolder;
 	float acc_balance;
-	void deposit(float b)
+	int deposit(float b)
 	{
 		acc_balance += b;
-
+		return EXIT_SUCCESS;
 	}
-	void withdraw(float b)
+	int withdraw(float b)
 	{
 		acc_balance -= b;
-
+		return EXIT_SUCCESS;
 	}
 	
 
 public:
-	void setHolderName(string n)
+	int setHolderName(string n)
 	{
 		acc_accountHolder = n;
+		return EXIT_SUCCESS;
 	}
-	void setAaccNumber(unsigned long int g)
+	int setAaccNumber(unsigned long int g)
 	{
 		acc_no = g;
-		acc_balance = 0.0;
+		acc_balance = 0.0; // once the account is created the account balance is set as o.o
+		return EXIT_SUCCESS;
 	}
 	
 	void display()

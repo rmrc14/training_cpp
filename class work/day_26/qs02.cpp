@@ -21,7 +21,7 @@ private:
 	float m_rating;
 	string m_rated;
 
-	void movieRated()
+	int movieRated()  //rating the movie
 	{
 		if (m_rating >= 7 and m_rating <= 10)
 			m_rated = "hit";
@@ -31,20 +31,24 @@ private:
 			m_rated = "flop";
 		else
 			m_rated = "out of range";
+		return EXIT_SUCCESS;
 	}
 
 public:
-	void setTitle( string n)
+	int setTitle( string n)
 	{
 		m_title = n;
+		return EXIT_SUCCESS;
 	}
-	void setGenre(string g)
+	int setGenre(string g)
 	{
 		m_genre = g;
+		return EXIT_SUCCESS;
 	}
-	void setRating(float rating)
+	int setRating(float rating)
 	{
 		m_rating = rating;
+		return EXIT_SUCCESS;
 
 	}
 
