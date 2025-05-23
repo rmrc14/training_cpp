@@ -59,7 +59,8 @@ float Parcel::calculateCost()//₹5/km for ≤5kg, else ₹8/km
 
 void Parcel::printCost()
 {
-	cout << "Order " << Order_ID << "\t|\t Tip: ₹" << calculateTip() << endl;
+	cout << "Parcel" << Parcel_ID << " | Cost: ₹"<< calculateCost() <<endl;
+
 }
 
 
