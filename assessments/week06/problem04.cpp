@@ -25,10 +25,7 @@ private:
 	string Passenger_Name;
 	float Weight;
 	float Limit;
-	
-	
-
-
+		
 public:
 	Luggage(string, float);
 	int checkOverweight();
@@ -62,6 +59,7 @@ int main()
 	/*Expected Output :
 	Luggage within limit.
 		Test Case 2 :*/
+	
 	Luggage l2("Sam", 25);
 	l2.checkOverweight();
 

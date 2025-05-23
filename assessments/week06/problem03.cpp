@@ -43,6 +43,7 @@ public:
 	void printDetails();
 };
 
+//constructor
 DeliveryTip::DeliveryTip(string fname, float pr,float km)
 {
 	Order_ID = fname;

@@ -39,7 +39,7 @@ public:
 	bool bookSeats(int);
 	void showAvailability();
 };
-
+//constructor
 Flight::Flight(string fname,int cap)
 {
 	flightName = fname;
