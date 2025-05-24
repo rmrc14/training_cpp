@@ -1,119 +1,94 @@
-/*
-
-implement empl class add employee use stack op and remove stack operation
-
-*/
-
-
 #include <iostream>
-
+#include <string>
 using namespace std;
 
-
-
+// ------------------- Employee Class -------------------
 class Employee {
-	static int emp_id;
-	int e_id;
-	string emp_name;
-
+    static int emp_id_counter;
+    int e_id;
+    string emp_name;
 
 public:
+    Employee() : e_id(0), emp_name("") {}
+    Employee(string name) {
+        emp_id_counter++;
+        e_id = emp_id_counter;
+        emp_name = name;
+    }
 
-	Employee() {}    //default constructor
-	Employee(string);
-	void displayEmp()const;
+    void displayEmp() const {
+        cout << "Employee ID: " << e_id << ", Name: " << emp_name << endl;
+    }
 };
 
-int Employee::emp_id;
+int Employee::emp_id_counter = 0; //static so declared outside class
 
-Employee::Employee(string name)
-{
-
-	emp_id++; //= new int[MAX];
-	e_id = emp_id;
-	emp_name = name;
-
-
-}
-void Employee::displayEmp()const
-{
-	cout << "employee name:\t" << emp_name << endl;
-	cout << "employee id  :\t" << e_id << endl;
-
-
-}
-
-// --------------------------------   STACK ---------------------
-
+// ------------------- Stack Class -------------------
 class Stack {
-	int* arr;
-	int top;
-	int bottom;
-	int MAX;
+    Employee* arr;
+    int top;
+    int MAX;
 
 public:
-	Stack(){}
-	Stack(int);
-	int push(int);
-	int pop();
-	void display()const;
+    Stack(int size = 3) {
+        MAX = size;
+        arr = new Employee[MAX];
+        top = -1;
+    }
+
+    ~Stack() {
+        delete[] arr; // to delete the Employee allocated
+    }
+
+    bool push(const Employee& emp) {
+        if (top == MAX - 1) {
+            cout << "Stack is full!" << endl;
+            return false;
+        }
+        arr[++top] = emp;
+        return true;
+    }
+
+    bool pop() {
+        if (top == -1) {
+            cout << "Stack is empty!" << endl;
+            return false;
+        }
+        cout << "Popped Employee: ";
+        arr[top--].displayEmp();
+        return true;
+    }
+
+    void display() const {
+        if (top == -1) {
+            cout << "Stack is empty!" << endl;
+            return;
+        }
+        cout << "Stack contents :" << endl;
+        for (int i = top; i >= 0; i--) {
+            arr[i].displayEmp();
+        }
+    }
 };
 
-Stack::Stack(int size=3)
-{
-	MAX = size;
-	Employee* arr = new Employee[3];
-	top = -1;
-	bottom = -1;
+// ------------------- Main -------------------
+int main() {
+    Stack s(3);
 
+    Employee e1("abc1");
+    Employee e2("abc2");
+    Employee e3("abc3");
+    Employee e4("abc4");
 
+    s.push(e1);
+    s.push(e2);
+    s.push(e3);
+    s.push(e4); // Will show "Stack is full"
+
+    s.display();
+
+    s.pop();
+    s.display();
+
+    return 0;
 }
-int Stack::push(int v)
-{
-	if (top == MAX - 1)
-	{
-		cout << "stack is full" << endl;
-		return 0;
-	}
-	top++;
-	arr[top] = v;
-
-	return 0;
-}
-int Stack::pop()
-{
-	if (top == bottom)
-	{
-		cout << "the stack is empty:" << endl;
-		return 0;
-	}
-	cout << "popped: " << arr[top] << endl;
-	top--;
-	return 0;
-}
-void Stack::display()const
-{
-	if (top == bottom)
-		cout << "the stack is empty:" << endl;
-
-	for (int i = top;i >= 0;i--)
-	{
-		cout << arr[i] << " " << endl;
-	}
-}
-
-int main()
-{
-	Employee e1("abc1"), e2("abc2");
-
-	
-	Employee* arr = new Employee[3];
-
-	Stack* S = new Stack[3];
-
-
-
-	return 0;
-}
-
-

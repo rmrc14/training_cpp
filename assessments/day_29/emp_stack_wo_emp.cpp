@@ -21,7 +21,7 @@ class Employee {
 
 public:
 
-	Employee() {}    //default constructor
+	Employee() : e_id(0), emp_name(""){}    //default constructor  always initialise variables
 	Employee(string);
 	void displayEmp()const;
 };

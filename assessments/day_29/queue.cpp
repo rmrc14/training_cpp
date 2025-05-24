@@ -31,7 +31,7 @@ int dequeue() {
 }
 
 void display() {
-    if (front == rear && front==MAX-1) {
+    if (front == rear) {
         cout << "Queue is empty" << endl;
         return;
     }
