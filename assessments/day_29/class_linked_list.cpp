@@ -1,6 +1,6 @@
 /*
 
-class linked list
+class linked list   --- continued in home work
 
 */
 

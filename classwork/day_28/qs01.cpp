@@ -33,7 +33,7 @@ int Stack::push(int v)
 	if (top == MAX - 1)
 	{
 		cout << "stack is full" << endl;
-		return 0;
+		return -1;
 	}
 	top++;
 	arr[top] = v;
@@ -45,7 +45,7 @@ int Stack::pop()
 	if (top == bottom)
 	{
 		cout << "the stack is empty:" << endl;
-		return 0;
+		return -1;
 	}
 	cout << "popped: " << arr[top] << endl;
 	top--;
