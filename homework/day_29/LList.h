@@ -206,35 +206,35 @@ void LList::display() const {
 
 // after search index add value   --- need to check
 
-//Node* LList::addAfterIndex(int index, int val)
-//{
-//    if (index < 0) 
-//    {
-//        cout << "Invalid index.\n";
-//        return head;
-//    }
-//
-//    Node* temp = head;
-//    int count = 0;
-//
-//    while (temp != nullptr && count < index)
-//    {
-//        temp = temp->next;
-//        count++;
-//    }
-//
-//    if (temp == nullptr) 
-//    {
-//        cout << "Index " << index << " is out of bounds.\n";
-//        return head;
-//    }
-//
-//    Node* newNode = new Node(val);
-//    newNode->next = temp->next;
-//    temp->next = newNode;
-//
-//    return head;
-//}
+Node* LList::addAfterIndex(int index, int val)
+{
+    if (index < 0) 
+    {
+        cout << "Invalid index.\n";
+        return head;
+    }
+
+    Node* temp = head;
+    int count = 0; // here are taking this to reach -> index 
+
+    while (temp != nullptr && count < index)
+    {
+        temp = temp->next;
+        count++;
+    }
+
+    if (temp == nullptr) 
+    {
+        cout << "Index " << index << " is out of bounds.\n";
+        return head;
+    }
+
+    Node* newNode = new Node(val);
+    newNode->next = temp->next;
+    temp->next = newNode;
+
+    return head;
+}
 
 
 
