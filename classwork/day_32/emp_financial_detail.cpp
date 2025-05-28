@@ -21,7 +21,7 @@ public:
     }
 };
 
-class Employee : public Person {
+class Employee : private Person { // changed from public
 protected:
     int e_id;
     int e_sal;
@@ -30,8 +30,13 @@ public:
     ~Employee() {}
     Employee(const string& n, char g, int age, int phno, int id, int sal, const string& dept)
         : Person(n, g, age, phno), e_id(id), e_sal(sal), e_dept(dept) {}
+   
+    /*void showPersonDetails() {
+        
+    }*/
 
     void display() {
+        Person::display();
         cout << "ID: " << e_id << endl;
         cout << "Dept: " << e_dept << endl;
         cout << "Salary: " << e_sal << endl;
@@ -53,7 +58,8 @@ public:
     ~EmpFin() {}
 
     void dispEmpFin() {
-        Person::display();
+        //showPersonDetails();
+        //Person::display();
         display();
         cout << "P Tax: " << e_pt << endl;
         cout << "P f: " << e_pf << endl;
