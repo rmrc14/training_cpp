@@ -70,7 +70,29 @@ public:
 
         cout << "Gross Salary: " << gs << endl;
     }
+   // friend void setDaysEmployee(EmpFin&, LMS&);
 };
+
+class LMS :public Employee
+{
+    int hours;
+    int days;
+public:
+    LMS(int hrs,int day):hours(hrs),days(day)
+    {}
+    void dispLMS()
+    {
+        cout << "hours:" << hours << endl;
+        cout << "days:" << days << endl;
+    }
+    //friend void setDaysEmployee(EmpFin&, LMS&);
+};
+
+
+//void setDaysEmployee(EmpFin& efobj, LMS& lmsobj)
+//{
+//    if(efobj.e_id==lmsobj.e_id)
+//}
 
 int main() {
     EmpFin e("Alice", 'm', 22, 1234, 29212, 26000, "IT", 200, 2600, 100000, 24);

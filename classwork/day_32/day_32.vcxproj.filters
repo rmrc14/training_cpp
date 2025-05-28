@@ -27,5 +27,14 @@
     <ClCompile Include="emp_financial_detail.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="problem01.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="virtual_animal_hybrid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="problem03.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
