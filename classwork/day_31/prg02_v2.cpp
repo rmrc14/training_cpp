@@ -13,8 +13,8 @@ public:
 		cout << "Person Constr got called" << endl;
 	}
 
-	void dispPerson() const{
-		
+	void dispPerson() {
+
 		cout << "Person Details are" << endl;
 		cout << "======================" << endl;
 		cout << "Name: " << name << endl;
@@ -52,8 +52,6 @@ public:
 	}
 	void dispEmp() const
 	{
-
-		dispPerson();
 		cout << "Employee Details are" << endl;
 		cout << "======================" << endl;
 		cout << "ID: " << e_id << endl;
@@ -69,17 +67,17 @@ public:
 int main()
 {
 	Employee eObj("ADH", "Bhima", 'm', 45, 101, 10000, "SSE");
-	//eObj.dispPerson();
+	eObj.dispPerson();
 	eObj.dispEmp();
 	eObj.updateName("shankar");
-	//eObj.dispPerson();
+	eObj.dispPerson();
 	eObj.dispEmp();
 	eObj.updateSSN("XYZ");
-//	eObj.dispPerson();
+	eObj.dispPerson();
 	//eObj.setSSN("JKL"); //calling protected method will create cmpl error
-	//eObj.dispPerson();
+	eObj.dispPerson();
 	eObj.setPerson("RRR", "Amit", 'M', 25);
-	//eObj.dispPerson();
+	eObj.dispPerson();
 	eObj.dispEmp();
 	return 0;
 
