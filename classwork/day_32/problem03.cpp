@@ -61,7 +61,7 @@ public:
         
     {
         cout << "Seating Capacity: " << c_seatingCap << endl;
-        cout << "Number of doors: " << c_seatingCap << endl;
+        cout << "Number of doors: " << number_of_doors << endl;
         cout << "Fuel type: " << fuel_type << endl;
     }
 

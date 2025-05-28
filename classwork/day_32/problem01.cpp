@@ -20,7 +20,9 @@ Class Definitions:
         numberOfDoors (int): Represents the number of doors of the car.
     Methods:
         honk(): Prints a message indicating that the car's horn is being honked.
-        Additionally, write a Main class with the main method to demonstrate 
+       
+     MAIN:  
+       Additionally, write a Main class with the main method to demonstrate 
         the functionality of these classes. Create instances of both the Vehicle 
         and Car classes, call their methods, and display appropriate messages.
 
@@ -45,24 +47,59 @@ class Vehicle
    string  make;// : Represents the make(manufacturer) of the vehicle.
    string model;// : Represents the model of the vehicle.
 public:
+    
+    ~Vehicle() { stop(); }
+    Vehicle(string make ,string model): make(make),model(model)
+    {
+        start();
+    }
 
-    void start() { cout << "start " << endl; } //: Prints a message indicating that the vehicle is starting.
-    void stop() { cout << "stop " << endl; }// : Prints a message indicating that the vehicle is stopping.
+    void dispVehicle()
+    {
+        cout << "Vehicle Make: " << make << endl;
+        cout << "Vehicle model: " << model << endl;
+    }
+    void start() { cout << "start " << endl; }
+    //: Prints a message indicating that the vehicle is starting.
+
+    void stop() { cout << "stopping " << endl; }
+    // : Prints a message indicating that the vehicle is stopping.
 };
 
 //derived class
-class Car
+class Car:public Vehicle
 {
     int numberOfDoors;//(int) : Represents the number of doors of the car.
     public :
+        ~Car(){}
+        Car(int doors, string make, string model):
+            Vehicle( make,  model),
+            numberOfDoors(doors)
+        {}
         
         void honk()
         {
-            cout << " sound of horn ";//: Prints a message indicating that the car's horn is being honked.
+            cout << " sound of horn " << endl;
+            //: Prints a message indicating that the car's horn is being honked.
 
         }
 };
 
  /* Additionally, write a Main class with the main method to demonstrate
-    the functionality of these classes.Create instances of both the Vehicle
+    the functionality of these classes.
+    Create instances of both the Vehicle
     and Car classes, call their methods, and display appropriate messages.*/
+
+int main()
+{
+    string make = "mk-17", model = "at18";
+    int doors = 4;
+    Vehicle v(make, model);
+    v.dispVehicle();
+
+    Car c( doors,  make,  model);
+    c.dispVehicle();
+    c.honk();
+
+    return 0;
+}
