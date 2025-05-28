@@ -26,23 +26,28 @@ class Employee
 private:
 	int e_id;
 	string e_name;
-
-	void calculateSal(int codingHr)
-	{
-		//Assume ₹500/hour and ₹5000/team member
-		 e_sal = codingHr * 500;
-	}
-	//coding hours + team size
-	void calculateSal(int codingHr ,int teamSize)
-	{
-		//Assume ₹500/hour and ₹5000/team member
-		e_sal = codingHr * 500 + 5000 * teamSize;
-	}
 protected:
 	float e_sal;
-public:
-	Employee(string name, int id,float sal) :e_id(id), e_name(name) ,e_sal(sal)
+	float calculateSal(int codingHr)
 	{
+		//Assume ₹500/hour and ₹5000/team member
+		return e_sal = codingHr * 500;
+	}
+	//coding hours + team size
+	float calculateSal(int codingHr ,int teamSize)
+	{
+		//Assume ₹500/hour and ₹5000/team member
+		return e_sal = codingHr * 500 + 5000 * teamSize;
+	}
+
+	
+public:
+	Employee(string name, int id,float sal,int codingHr ,int teamSize=0) :e_id(id), e_name(name) ,e_sal(sal) 
+	{
+	/*	if (teamSize > 0)
+			calculateSal( codingHr,  teamSize);
+		else
+			calculateSal(codingHr);*/
 	
 	}
 
@@ -66,7 +71,7 @@ protected:
 public:
 
 
-	Developer(string name, int age, int rollno, float m1, float m2, float m3) : Employee(name, rollno, age)
+	Developer(string name, int age, int rollno, ) : Employee(name, rollno, age)
 	{
 		
 	}
@@ -94,7 +99,11 @@ public:
 
 class TechLead :public Manager, Developer
 {
+public:
+	void display()
+	{
 
+	}
 };
 
 
