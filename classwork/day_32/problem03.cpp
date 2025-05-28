@@ -137,8 +137,12 @@ gears, number of wheels, make – type)*/
 
 int main()
 {
+    //Audi car(modeltype, seating capacity, number of doors, fuel type,price )
 
-    Audi audiCar("A6", 5, 4, "Petrol", 65000);
+    Audi audiCar("A6", 5, 4, "Petrol", 65000); 
+
+    //(price, number of cylinders, number of gears, number of wheels, make – type)
+
     Yamaha yamahaBike("MT-15", 1, 6, 2, 17500);
 
     cout << "=== Audi Car Details ===" << endl;
