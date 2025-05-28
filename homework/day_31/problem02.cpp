@@ -61,17 +61,14 @@ public:
 
 class Developer :public Employee
 {
-private:
-	
-	float d_sal;
-	
 
 protected:
 	int d_codingHr;
 public:
 
 
-	Developer(string name, int age, int rollno, ) : Employee(name, rollno, age)
+	Developer(string name, int id, float sal, int codingHr, int teamSize)
+		: Employee( name,  id,  sal,  codingHr,  teamSize),d_codingHr(codingHr)
 	{
 		
 	}
@@ -87,12 +84,12 @@ public:
 
 class Manager :public Employee
 {
-private:
+protected:
 	int m_teamSize;
 	
 	
 public:
-	
+	Manager(){}
 
 
 };
@@ -100,6 +97,8 @@ public:
 class TechLead :public Manager, Developer
 {
 public:
+	TechLead(string name, int id, float sal, int codingHr, int teamSize )
+	{}
 	void display()
 	{
 
