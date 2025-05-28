@@ -48,21 +48,19 @@ class Vehicle
    string model;// : Represents the model of the vehicle.
 public:
     
-    ~Vehicle() { stop(); }
+    ~Vehicle() {  }
     Vehicle(string make ,string model): make(make),model(model)
-    {
-        start();
-    }
+    { }
 
     void dispVehicle()
     {
         cout << "Vehicle Make: " << make << endl;
         cout << "Vehicle model: " << model << endl;
     }
-    void start() { cout << "start " << endl; }
+    void start() { cout << "starting the "<<make<<" " << model << endl; }
     //: Prints a message indicating that the vehicle is starting.
 
-    void stop() { cout << "stopping " << endl; }
+    void stop() { cout << "stopping " << make << " " << model << endl; }
     // : Prints a message indicating that the vehicle is stopping.
 };
 
@@ -79,7 +77,7 @@ class Car:public Vehicle
         
         void honk()
         {
-            cout << " sound of horn " << endl;
+            cout << "Honking the horn of the " << endl;
             //: Prints a message indicating that the car's horn is being honked.
 
         }
@@ -92,14 +90,19 @@ class Car:public Vehicle
 
 int main()
 {
-    string make = "mk-17", model = "at18";
+    Vehicle v1("generic", "vehicle");
+    v1.start();
+    v1.stop();
+
+    string make = "toyota", model = "camry";
     int doors = 4;
-    Vehicle v(make, model);
-    v.dispVehicle();
+    //Vehicle v(make, model);
+    //v.dispVehicle();
 
     Car c( doors,  make,  model);
     c.dispVehicle();
+    c.start();
     c.honk();
-
+    c.stop();
     return 0;
 }
