@@ -50,12 +50,16 @@ public:
         Marks(marks, rollno, name, admin_name) {}
 
     bool sportQualification() {
-        if (marks >= 45) {
+        if (marks >= 45)
+        {
+            cout << "qualification --------" << endl;
             cout << "Marks: " << marks << endl;
             cout << "Student eligible to participate in extracurricular activities (sports)." << endl;
             return true;
         }
         else {
+
+            cout << "qualification --------" << endl;
             cout << "Marks: " << marks << endl;
             cout << "Student not eligible for extracurricular activities." << endl;
             return false;
