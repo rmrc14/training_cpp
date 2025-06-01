@@ -1,0 +1,8 @@
+[2025-06-01 20:43:52.805][INFO]loaded 5 packets.
+[2025-06-01 20:44:05.119][INFO]Selected protocol filter for TCP
+[2025-06-01 20:44:05.120][DEBUG]Packet 1 | TCP | 450 bytes
+[2025-06-01 20:44:05.120][DEBUG]Packet 4 | TCP | 200 bytes
+[2025-06-01 20:44:07.788][INFO]Selected large packet checker
+[2025-06-01 20:44:07.788][WARNING]Packet 3 | ICMP | 1050 bytes
+[2025-06-01 20:44:10.783][INFO]Logs saved to netmon_log.txt.
+[2025-06-01 20:44:34.386][INFO]Logs saved to netmon_log.txt.
