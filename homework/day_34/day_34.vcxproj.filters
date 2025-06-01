@@ -15,14 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="file_handling.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="file_handling_02.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="file_handling_03.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Employee.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Financial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Employee.txt" />
   </ItemGroup>
 </Project>

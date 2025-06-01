@@ -1,0 +1,25 @@
+[2025-06-01 12:33:25.578] [INFO ] Successfully loaded 5 jobs.
+[2025-06-01 12:33:36.238] [INFO ] Selected FIFO Scheduling.
+[2025-06-01 12:33:40.965] [DEBUG] Sorted jobs using FIFO (Job ID).
+[2025-06-01 12:33:40.966] [DEBUG] Executing Job ID: 1 | Priority: 2
+[2025-06-01 12:33:41.080] [DEBUG] Executing Job ID: 2 | Priority: 3
+[2025-06-01 12:33:41.236] [DEBUG] Executing Job ID: 3 | Priority: 1
+[2025-06-01 12:33:41.361] [DEBUG] Executing Job ID: 4 | Priority: 5
+[2025-06-01 12:33:41.549] [DEBUG] Executing Job ID: 5 | Priority: 4
+[2025-06-01 12:33:41.689] [INFO ] All jobs executed in 723ms.
+[2025-06-01 12:33:45.311] [INFO ] Displayed log from job_log.txt.
+[2025-06-01 12:33:54.217] [INFO ] Successfully loaded 5 jobs.
+[2025-06-01 12:34:01.988] [INFO ] Selected Priority Scheduling.
+[2025-06-01 12:34:11.331] [DEBUG] Sorting jobs by priority...
+[2025-06-01 12:34:11.332] [DEBUG] Job 4 | Priority 5 | ExecTime 180ms
+[2025-06-01 12:34:11.333] [DEBUG] Job 5 | Priority 4 | ExecTime 130ms
+[2025-06-01 12:34:11.333] [DEBUG] Job 2 | Priority 3 | ExecTime 150ms
+[2025-06-01 12:34:11.333] [DEBUG] Job 1 | Priority 2 | ExecTime 100ms
+[2025-06-01 12:34:11.333] [DEBUG] Job 3 | Priority 1 | ExecTime 120ms
+[2025-06-01 12:34:11.333] [DEBUG] Executing Job ID: 4 | Priority: 5
+[2025-06-01 12:34:11.517] [DEBUG] Executing Job ID: 5 | Priority: 4
+[2025-06-01 12:34:11.658] [DEBUG] Executing Job ID: 2 | Priority: 3
+[2025-06-01 12:34:11.814] [DEBUG] Executing Job ID: 1 | Priority: 2
+[2025-06-01 12:34:11.924] [DEBUG] Executing Job ID: 3 | Priority: 1
+[2025-06-01 12:34:12.049] [INFO ] All jobs executed in 715ms.
+[2025-06-01 12:34:15.105] [INFO ] Displayed log from job_log.txt.

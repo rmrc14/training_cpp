@@ -15,13 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="file_handling.cpp">
+    <ClCompile Include="copy_constructor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="file_handling_02.cpp">
+    <ClCompile Include="operator_overloading.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="file_handling_03.cpp">
+    <ClCompile Include="function_pointer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chrono.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chrono01.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="logging_logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
