@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{fa66d6fd-c9ad-49ab-97b7-320cd130a174}</ProjectGuid>
-    <RootNamespace>practiceloggerclasswithproblem01fifopriority</RootNamespace>
+    <ProjectGuid>{aac656f4-17e1-4585-af2a-e36b1a7cea86}</ProjectGuid>
+    <RootNamespace>day36</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -128,11 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="job.h" />
-    <ClInclude Include="log.h" />
-    <ClInclude Include="Logger.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
