@@ -57,7 +57,7 @@ public:
 
 		}
 		int max = INT_MIN,min=INT_MAX;
-		for (int i=0; i < 9; i++)
+		for (int i=0; i < 10; i++)
 		{
 			if (freq[i] > 0)
 			{
