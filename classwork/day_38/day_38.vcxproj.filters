@@ -21,6 +21,15 @@
     <ClCompile Include="forward_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="problem03.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="problem04.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="problem03_reinterpretted.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Employee.h">
