@@ -43,25 +43,29 @@ int main()
 	std::cout << std::endl;
 
 	std::cout << "top 3 scorers are: " << std::endl;
-	for (int i = 0; i < scores.size(); i++) {
-		bool isDuplicate = false;
-
-		// Check if scores[i] appeared before position i
-		for (int j = 0; j < i; j++) {
-			if (scores[i] == scores[j]) {
-				isDuplicate = true;
-				break;
-			}
-		}
-
-		if (!isDuplicate)
+	int i;
+	for ( i = 0;i < scores.size()-1;i++)
+		if (scores[i] == scores[i + 1])
 			std::cout << scores[i] << std::endl;
-	}
+	if (scores[i] == scores[i-1 ])
+		std::cout << scores[i] << std::endl;
 
-	/*for (auto it : scores)
-	{
-		
-	}*/
+	//for (int i = 0; i < scores.size(); i++) {
+	//	bool isDuplicate = false;
+
+	//	// Check if scores[i] appeared before position i
+	//	for (int j = 0; j < i; j++) {
+	//		if (scores[i] == scores[j]) {
+	//			isDuplicate = true;
+	//			break;
+	//		}
+	//	}
+
+	//	if (!isDuplicate)
+	//		std::cout << scores[i] << std::endl;
+	//}
+
+	
 
 
 	//std::unique(scores.begin(), scores.end());
