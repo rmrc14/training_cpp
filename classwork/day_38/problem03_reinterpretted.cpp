@@ -3,6 +3,7 @@
 #include <string>
 #include <algorithm>
 #include <sstream>
+#include<iterator>
 
 class TaskManager {
     std::list<std::string> tasks;
@@ -33,7 +34,7 @@ public:
     void showTasks() const {
         for (auto it = tasks.begin(); it != tasks.end(); ++it) {
             std::cout << *it;
-            if (std::next(it) != tasks.end()) {
+            if (std::next(it) != tasks.end()) { // to not print for the last element 
                 std::cout << " -> ";
             }
         }

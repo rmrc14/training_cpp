@@ -33,16 +33,17 @@ void addLog(forward_list<string>& logs, const string& message) {
     logs.push_front(message);
     int count = 0;
     auto it = logs.before_begin();
-    for (auto next = logs.begin(); next != logs.end(); ++next) 
+    for (auto next = logs.begin(); next != logs.end(); ++next)
     {
         count++;
         if (count >= MAX_LOGS) {
-            logs.erase_after(next);
+            logs.erase_after(it);  //Deletes the tail node correctly
             break;
         }
         ++it;
     }
 }
+
 
 int main() {
     forward_list<string> logs;

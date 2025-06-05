@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="problem01.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="forward_list.cpp">
+    <ClCompile Include="problem02.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="problem03.cpp">
@@ -27,19 +27,5 @@
     <ClCompile Include="problem04.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="problem03_reinterpretted.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="problrm05.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="problem05.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Employee.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
