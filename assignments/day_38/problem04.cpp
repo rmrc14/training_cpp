@@ -9,6 +9,7 @@ int main() {
     deque<string> history;
 
     string line;
+    //goes infinitely 
     while (getline(cin, line))   //gets input 
     {
         if (line == "HISTORY") {

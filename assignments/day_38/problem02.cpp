@@ -9,16 +9,16 @@ using namespace std;
 int main() {
     vector<string> words = { "Apple", "banana", "apple", "Orange", "BANANA", "grape" };
 
-    // 1. Convert all words to lowercase
+    // Convert all words to lowercase
     for (auto& word : words) {
         //[](unsigned char c) { return std::tolower(c); }  //for other sys negative value
         transform(word.begin(), word.end(), word.begin(),::tolower);
     }
 
-    // 2. Sort the vector
+    //  Sort the vector
     sort(words.begin(), words.end());
 
-    // 3. Remove duplicates using unique + erase
+    //  Remove duplicates using unique + erase
     auto last = unique(words.begin(), words.end());
     words.erase(last, words.end());
 

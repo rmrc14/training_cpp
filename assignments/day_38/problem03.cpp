@@ -11,8 +11,8 @@ int main() {
 
     // Remove messages starting with "DELETED:"
     messages.remove_if([](const string& msg) {  //remove_if iterate through entire list internally
-        return msg.rfind("DELETED:", 0) == 0;  // starts with "DELETED:"
-        //return msg.find("DELETED:") == 0;
+        //return msg.rfind("DELETED:", 0) == 0;  // starts with "DELETED:"
+        return msg.find("DELETED:") == 0;  //checks if its in first index
 
         });
 
