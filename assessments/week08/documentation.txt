@@ -1,0 +1,76 @@
+DOCUMENTATION -
+
+
+1. Created class Microprocessor
+
+	-which contains all the registers 
+		AX,BX,CX,DX
+
+	- and memory of mem(16*(4)) 
+
+	- and funtions for the emulation of commands
+
+		int MUL(int a, int b);  -- to muliply the value in registers
+		int ADD(int a, int b);  -- to ADD the value in registers
+		int SUB(int a, int b);	-- to SUB the value in registers
+		int DIV(int a, int b);	-- to DIV the value in registers
+
+		void MOV(int* , int* );  -- move from register to register
+		void MOV(int* , int );	 -- move value to a register
+
+		void displayHlt();		 -- marks the end of program and display the all memory and register
+									value
+		
+
+		int* convertToBinary(int val); -- implemented to convert int value to binary and store in
+										  the register or memory
+
+		int (*fptr)(int,int) = nullptr; -- implemented to point to different arithematic operation
+											function
+
+2. class FileParsing  
+		- which opens the file "instructions.txt" using constructor
+		- and closes the file after object is destroyed
+
+
+		-void parsingCmd(const string& filename);  -- parsing each command and direct it to
+													  another function which calls 
+													  each function of its required operation
+
+		-void callingMicroProc(string );      -- this is to call each function
+												 by comparing the commands to 2 enum for 
+												 each register and the commands
+
+3. main  -----   only the FileParsing object is created which runs the entire program
+
+
+
+
+O/p-- error not correct not completed
+
+
+C:\Users\Administrator\Desktop\training_cpp\cpp_training\assessments\week08>g++ main.cpp
+
+C:\Users\Administrator\Desktop\training_cpp\cpp_training\assessments\week08>a.exe
+Received Interrupt
+AX: 0x1f6fc8
+BX: 0x1f7010
+CX: 0x1f7058
+DX: 0x1f70a0
+First 16 bit Memory
+00 -> 2031808
+01 -> 2037488
+02 -> 34603536
+03 -> 34603536
+04 -> 34603536
+05 -> 34603794
+06 -> 36700688
+07 -> 34603536
+08 -> 34603536
+09 -> 34865684
+10 -> 51511824
+11 -> 34603536
+12 -> 34865680
+13 -> 34603794
+14 -> 34603536
+15 -> 34603536
