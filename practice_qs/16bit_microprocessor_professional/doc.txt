@@ -1,0 +1,36 @@
++------------------+
+|      Emulator     |
++------------------+
+| - cpu: CPU       |
+| - program: vector<Instruction> |
+| - pc: size_t     |
++------------------+
+| + loadProgram()  |
+| + run()          |
+| - execute(instr) |
++------------------+
+          |
+          v
++------------------+
+|       CPU        |
++------------------+
+| - registers: map |
+| - memory: vector |
++------------------+
+| + getRegister()  |
+| + setRegister()  |
+| + getMemory()    |
+| + setMemory()    |
+| + printState()   |
++------------------+
+
++------------------+
+|      Parser      |
++------------------+
+| + parse(string)  |
++------------------+
+
+Instruction struct:
+  - opcode: string
+  - operand1: string
+  - operand2: string
