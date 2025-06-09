@@ -104,7 +104,7 @@ public:
     }
 
     void dumpRegisters() {
-        cout << "\n=== 🧠 16-bit CPU Register Dump ===\n";
+        cout << "\n=== 16-bit CPU Register Dump ===\n";
         cout << "AX = " << setw(5) << AX << "\n";
         cout << "BX = " << setw(5) << BX << "\n";
         cout << "CX = " << setw(5) << CX << "\n";
@@ -113,7 +113,7 @@ public:
     }
 
     void dumpMemory(int start, int end) {
-        cout << "\n=== 🧮 Memory Dump [" << start << " to " << end << "] ===\n";
+        cout << "\n=== Memory Dump [" << start << " to " << end << "] ===\n";
         for (int i = start; i <= end; i++) {
             cout << "mem[" << setw(5) << i << "] = " << setw(5) << memory[i] << "\n";
         }
@@ -181,6 +181,6 @@ int main() {
     cpu.dumpMemory(0, 11);
 
     cout.rdbuf(coutbuf);
-    cout << "✅ Execution complete. See results in output.txt\n";
+    cout << "Execution complete. See results in output.txt\n";
     return 0;
 }
