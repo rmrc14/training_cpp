@@ -39,16 +39,19 @@ public:
 };
 
 // Helper function to create a linked list from array
-ListNode* createList(const vector<int>& nums) {
+ListNode* createList(const vector<int>& nums) 
+{
     ListNode* head = nullptr;
     ListNode* tail = nullptr;
 
     for (int num : nums) {
-        if (!head) {
+        if (!head) 
+        {
             head = new ListNode(num);
             tail = head;
         }
-        else {
+        else 
+        {
             tail->next = new ListNode(num);
             tail = tail->next;
         }
@@ -58,8 +61,10 @@ ListNode* createList(const vector<int>& nums) {
 }
 
 // Helper function to print a linked list
-void printList(ListNode* head) {
-    while (head != nullptr) {
+void printList(ListNode* head) 
+{
+    while (head != nullptr) 
+    {
         cout << head->val;
         if (head->next) cout << " -> ";
         head = head->next;
@@ -68,7 +73,8 @@ void printList(ListNode* head) {
 }
 
 // Main function
-int main() {
+int main() 
+{
     // Example: l1 = [2,4,3], l2 = [5,6,4]
     vector<int> l1_values = { 2, 4, 3 };
     vector<int> l2_values = { 5, 6, 4 };

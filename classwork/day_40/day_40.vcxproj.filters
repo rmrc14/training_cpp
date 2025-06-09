@@ -30,5 +30,8 @@
     <ClCompile Include="leetcode_twosum_problem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="hackerRank02.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
