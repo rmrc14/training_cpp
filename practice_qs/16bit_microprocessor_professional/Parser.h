@@ -13,7 +13,8 @@ struct Instruction {
 
 class Parser {
 public:
-    static Instruction parse(const std::string& line) {
+    static Instruction parse(const std::string& line)
+    {
         Instruction instr;
         std::string cleaned = line;
 
@@ -43,7 +44,8 @@ public:
             instr.operand1.erase(instr.operand1.find_last_not_of(" \t") + 1);
             instr.operand2.erase(0, instr.operand2.find_first_not_of(" \t"));
         }
-        else {
+        else 
+        {
             instr.operand1 = rest;
         }
 
