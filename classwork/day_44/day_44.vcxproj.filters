@@ -27,34 +27,26 @@
     <ClCompile Include="problem01.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main1.cpp">
+    <ClCompile Include="problem02.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hackerrank_balanced_bracket.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="nextGreaterElement.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="probelm03.cpp">
+    <ClCompile Include="problem03.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="problem04.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="prg03.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="problem05.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="file.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <_EmbedManagedResourceFile Include="problem02.cpp">
+    <ClCompile Include="problem06.cpp">
       <Filter>Source Files</Filter>
-    </_EmbedManagedResourceFile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="README.md" />
+    </ClCompile>
+    <ClCompile Include="problem07.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

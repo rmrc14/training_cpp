@@ -23,18 +23,37 @@ output:
 
 */
 
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
+#include <stack>
 
-using namespace std;
+
+std::vector<int> nextGreaterElements(const std::vector<int>& arr)
+{
+    std::vector<int> nge(arr.size(), -1);   // default all to -1
+    std::stack<size_t> st;                  
+
+    for (size_t i = 0; i < arr.size(); ++i)
+    {
+        // Resolve NGE for elements smaller than arr[i]
+        while (!st.empty() && arr[i] > arr[st.top()]) //{ 4, 5, 2, 25, 7, 8 }
+        {
+            nge[st.top()] = arr[i];
+            st.pop();
+        }
+        st.push(i);
+    }
+    // Remaining indices already have nge = -1
+    return nge;
+}
 
 int main()
 {
-	vector<int> v = { 4, 5, 2, 25, 7,8 };
+    std::vector<int> arr{ 4, 5, 2, 25, 7, 8 };
 
+    std::vector<int> nge = nextGreaterElements(arr);
 
-
-
-
-	return 0;
+    std::cout << "Element --> NGE\n\n";
+    for (size_t i = 0; i < arr.size(); ++i)
+        std::cout << arr[i] << " --> " << nge[i] << std::endl;
 }
