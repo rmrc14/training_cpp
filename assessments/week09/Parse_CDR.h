@@ -88,8 +88,8 @@ void ParseCdr::seperateCustomer()
 		// for data
 		if (a.Call_type == "GPRS")
 		{
-			c.
-
+			c.setDownloaded_w(c.getDownloaded_w() + a.Download);
+			c.setUploaded_w(c.getUploaded_w() + a.Upload);
 		}
 
 	}
