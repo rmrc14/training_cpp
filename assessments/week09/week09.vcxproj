@@ -137,8 +137,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoreHeader.h" />
+    <ClInclude Include="Customer.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Operator.h" />
     <ClInclude Include="Parse_CDR.h" />
     <ClInclude Include="ThreadPool.h" />
     <ClInclude Include="UserLogin.h" />

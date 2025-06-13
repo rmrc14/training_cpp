@@ -2,30 +2,6 @@
 
 #include "CoreHeader.h"
 
-struct CDR{
-
-	unsigned long int MSSISDN, Operator_MMC_MNC, Third_party_MSISDN,Third_party_operator_MMC_MNC;
-
-	unsigned int Duration, Download, Upload;
-
-	std::string Operator_Brand_Name, Call_type;
-
-	void display()
-	{
-		std::cout << MSSISDN << "|";
-		std::cout << Operator_Brand_Name << "|";
-		std::cout << Operator_MMC_MNC << "|";
-		std::cout << Call_type << "|";
-		std::cout << Duration << "|";
-		std::cout << Download << "|";
-		std::cout << Upload << "|";
-		std::cout << Third_party_MSISDN << "|";
-		std::cout << Third_party_operator_MMC_MNC << "|"<<std::endl;
-
-	}
-};
-
-
 
 class ParseCdr
 {
@@ -49,6 +25,7 @@ public:
 
 	void parse();
 	void displayCdrQueu();
+	std::vector<CDR> getCdrInstr() { return vCdr; }
 };
 
 
@@ -70,45 +47,32 @@ void ParseCdr::parse()
 
 	while (getline(fin, line))
 	{
-		//1037928|Jio|42502|SMS-MT|0|0|0|1136404|42504
-// 1. MSSISDN | Operator_Brand_Name | 	Operator_MMC_MNC| Call_type |Duration|
-			//	Download|	Upload|Third_party_MSISDN|	Third_party_operator_MMC_MNC
-		std::istringstream iss(line);
-		CDR c;
-		// there are empty space after space then change the value to 0
-		if (line.find("GPRS") )
-		{
-			for (auto& e : line)  // replaces the |  with a wspace for stringstream
+		
+			
+			for (char& e : line)  // replaces the |  with a wspace for stringstream
 			{
 				if (e == '|')
 				{
 					e = ' ';
+
 				}
 			}
+			std::istringstream iss(line);
+			CDR c;
 
 
 			iss >> c.MSSISDN >> c.Operator_Brand_Name >> c.Operator_MMC_MNC >> c.Call_type
 				>> c.Duration >> c.Download >> c.Upload;
-
-			c.Third_party_operator_MMC_MNC = line.find_first_not_of(" \t");
-
-		}
-		else
-		{
-			for (auto& e : line)  // replaces the |  with a wspace for stringstream
+			
+			if ((c.Call_type == "GPRS"))
 			{
-				if (e == '|')
-				{
-					e = ' ';
-				}
+				iss >> c.Third_party_operator_MMC_MNC;
 			}
-
-
-			iss >> c.MSSISDN >> c.Operator_Brand_Name >> c.Operator_MMC_MNC >> c.Call_type
-				>> c.Duration >> c.Download >> c.Upload >> c.Third_party_MSISDN
-				>> c.Third_party_operator_MMC_MNC;
-
-		}
+			else
+			{
+				iss >> c.Third_party_MSISDN
+					>> c.Third_party_operator_MMC_MNC;
+			}			
 
 		// pushes the value to a queue
 		vCdr.push_back(c);
