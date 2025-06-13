@@ -56,12 +56,15 @@ public:
 	int getOutgoing_voice_call_durations_w() { return Outgoing_voice_call_durations_w; }
 	int getIncoming_SMS_messages_w() {return Incoming_SMS_messages_w; }
 	int getOutgoing_SMS_messages_w() { return Outgoing_SMS_messages_w; }
+	int getDownloaded_w() {return downloaded ; }
+	int getUploaded_w() { return uploaded ; }
 	//getters outgoing
 	int getIncoming_voice_call_durations_o(){ return Incoming_voice_call_durations_o; }
 	int getOutgoing_voice_call_durations_o(){ return Outgoing_voice_call_durations_o; }
 	int getIncoming_SMS_messages_o(){ return Incoming_SMS_messages_o; }
 	int getOutgoing_SMS_messages_o(){ return Outgoing_SMS_messages_o; }
-
+	int getDownloaded_o() { return downloaded; }
+	int getUploaded_o() { return uploaded; }
 
 
 	//setters
@@ -69,12 +72,15 @@ public:
 	void setOutgoing_voice_call_durations_w(int n) {  Outgoing_voice_call_durations_w = n; }
 	void setIncoming_SMS_messages_w(int n) {  Incoming_SMS_messages_w = n; }
 	void setOutgoing_SMS_messages_w(int n) {  Outgoing_SMS_messages_w = n; }
+	void setDownloaded_w(int n) { downloaded = n; }
+	void setUploaded_w(int n) { uploaded = n; }
 	// outgoing
 	void setIncoming_voice_call_durations_o(int n) {  Incoming_voice_call_durations_o = n; }
 	void setOutgoing_voice_call_durations_o(int n) {  Outgoing_voice_call_durations_o = n; }
 	void setIncoming_SMS_messages_o(int n) {  Incoming_SMS_messages_o = n; }
 	void setOutgoing_SMS_messages_o(int n) {  Outgoing_SMS_messages_o = n; }
-
+	void setDownloaded_o(int n) { downloaded = n; }
+	void setUploaded_o(int n) { uploaded = n; }
 
 };
 

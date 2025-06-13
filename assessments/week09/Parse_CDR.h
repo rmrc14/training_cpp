@@ -85,7 +85,12 @@ void ParseCdr::seperateCustomer()
 			}
 
 		}
+		// for data
+		if (a.Call_type == "GPRS")
+		{
+			c.
 
+		}
 
 	}
 
