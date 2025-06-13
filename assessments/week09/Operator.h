@@ -14,6 +14,15 @@ Operator Brand: Cellcom (42500)
 
 class Operator
 {
+	std::string Operator_Brand;
+	ull id;
+	int Incoming_voice_call_durations;// : 844736
+	int Outgoing_voice_call_durations;// : 874157
+	int Incoming_SMS_messages;// : 4000
+	int Outgoing_SMS_messages;// : 3990
+	int downloaded;
+	int uploaded;//: 416108
 	
+
 
 };

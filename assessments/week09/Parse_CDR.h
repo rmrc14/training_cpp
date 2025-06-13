@@ -95,12 +95,14 @@ void ParseCdr::seperateCustomer()
 
 			v_customer.push_back(c);
 		}
-		
-		
-		
-		
 
 	}
+
+	// operator 
+
+
+
+
 
 }
 
