@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreHeader.h"
+#include "Customer.h"
 
 
 class ParseCdr
@@ -26,7 +27,69 @@ public:
 	void parse();
 	void displayCdrQueu();
 	std::vector<CDR> getCdrInstr() { return vCdr; }
+
+
+	void seperateCustomer();
 };
+
+void ParseCdr::seperateCustomer()
+{
+	for (auto& a : vCdr)
+	{
+		Customer c;
+		// for msg
+		if (a.Operator_MMC_MNC == a.Third_party_operator_MMC_MNC)
+		{
+			if(a.Call_type=="SMS-MT")
+			{
+				c.setIncoming_SMS_messages_w(c.getIncoming_SMS_messages_w() + a.Duration);
+			}
+			else if (a.Call_type == "SMS-MO")
+			{
+				c.setOutgoing_SMS_messages_w(c.getOutgoing_SMS_messages_w() + a.Duration);
+			}
+		}
+		else
+		{
+			if (a.Call_type == "SMS-MT")
+			{
+				c.setIncoming_SMS_messages_o(c.getIncoming_SMS_messages_o() + a.Duration);
+			}
+			else if (a.Call_type == "SMS-MO")
+			{
+				c.setOutgoing_SMS_messages_o(c.getOutgoing_SMS_messages_o() + a.Duration);
+			}
+
+		}
+		// for call
+		if (a.Operator_MMC_MNC == a.Third_party_operator_MMC_MNC)
+		{
+			if (a.Call_type == "MTC")
+			{
+				c.setIncoming_voice_call_durations_w(c.getIncoming_voice_call_durations_w() + a.Duration);
+			}
+			else if (a.Call_type == "MOC")
+			{
+				c.setOutgoing_voice_call_durations_w(c.getOutgoing_voice_call_durations_w() + a.Duration);
+			}
+		}
+		else
+		{
+			if (a.Call_type == "MTC")
+			{
+				c.setIncoming_voice_call_durations_o(c.getIncoming_voice_call_durations_o() + a.Duration);
+			}
+			else if (a.Call_type == "MOC")
+			{
+				c.setOutgoing_voice_call_durations_o(c.getOutgoing_voice_call_durations_o() + a.Duration);
+			}
+
+		}
+
+
+	}
+
+}
 
 
 //---------------------------  display -----------------

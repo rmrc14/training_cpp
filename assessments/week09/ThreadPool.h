@@ -8,7 +8,7 @@ class Thread
 	std::vector<std::thread> t_operator;
 	std::vector<std::thread> t_customer;
 	std::vector<CDR> tmpOperator;
-	std::map<CDR> customer;
+	//std::map<CDR> customer;
 
 public:
 	void execute(std::vector<CDR>);
@@ -26,6 +26,7 @@ void Thread::customerBilling()
 		cdr=*tmp.begin();
 		tmp.erase(tmp.begin());
 
+		
 	}
 
 }

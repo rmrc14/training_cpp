@@ -1,0 +1,1 @@
+[2025-06-13 17:03:03.565]	[INFO] parsed the file : data.cdr

@@ -4,6 +4,8 @@
 #include "Parse_CDR.h"
 #include "Logger.h"
 #include "ThreadPool.h"
+#include "Menu.h"
+
 
 int main()
 {
@@ -14,6 +16,7 @@ int main()
 	{
 		ParseCdr p("data.cdr");
 		p.parse();
+		loging.log(INFO, "parsed the file : data.cdr");
 		p.displayCdrQueu();
 		Thread t;
 		t.execute(p.getCdrInstr());

@@ -3,6 +3,8 @@
 
 class Customer
 {
+	std::set<Customer> c;
+	
 	unsigned long int MSSISDN,Operator_MMC_MNC; // country code;
 	std::string Operator_Brand_Name;
 	
@@ -54,11 +56,24 @@ public:
 	int getOutgoing_voice_call_durations_w() { return Outgoing_voice_call_durations_w; }
 	int getIncoming_SMS_messages_w() {return Incoming_SMS_messages_w; }
 	int getOutgoing_SMS_messages_w() { return Outgoing_SMS_messages_w; }
+	//getters outgoing
+	int getIncoming_voice_call_durations_o(){ return Incoming_voice_call_durations_o; }
+	int getOutgoing_voice_call_durations_o(){ return Outgoing_voice_call_durations_o; }
+	int getIncoming_SMS_messages_o(){ return Incoming_SMS_messages_o; }
+	int getOutgoing_SMS_messages_o(){ return Outgoing_SMS_messages_o; }
 
-	int getIncoming_voice_call_durations_o{ return Incoming_voice_call_durations_o; }
-	int getOutgoing_voice_call_durations_o{ return Outgoing_voice_call_durations_o; }
-	int getIncoming_SMS_messages_o{ return Incoming_SMS_messages_o; }
-	int getOutgoing_SMS_messages_o{ return Outgoing_SMS_messages_o; }
+
+
+	//setters
+	void  setIncoming_voice_call_durations_w(int n) {  Incoming_voice_call_durations_w=n; }
+	void setOutgoing_voice_call_durations_w(int n) {  Outgoing_voice_call_durations_w = n; }
+	void setIncoming_SMS_messages_w(int n) {  Incoming_SMS_messages_w = n; }
+	void setOutgoing_SMS_messages_w(int n) {  Outgoing_SMS_messages_w = n; }
+	// outgoing
+	void setIncoming_voice_call_durations_o(int n) {  Incoming_voice_call_durations_o = n; }
+	void setOutgoing_voice_call_durations_o(int n) {  Outgoing_voice_call_durations_o = n; }
+	void setIncoming_SMS_messages_o(int n) {  Incoming_SMS_messages_o = n; }
+	void setOutgoing_SMS_messages_o(int n) {  Outgoing_SMS_messages_o = n; }
 
 
 };

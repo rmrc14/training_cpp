@@ -70,7 +70,7 @@ public:
         }
     }
 
-    void log(LogLevel level, std::string& message)
+    void log(LogLevel level, const std::string& message)
     {
         try
         {
