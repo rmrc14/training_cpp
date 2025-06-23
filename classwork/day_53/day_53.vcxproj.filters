@@ -15,22 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main_lambda.cpp">
+    <ClCompile Include="qs01.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lambda_01.cpp">
+    <ClCompile Include="qs02.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lambda_03.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="smartPointer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="smart_pointer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="shared_ptr.cpp">
+    <ClCompile Include="qs03.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
