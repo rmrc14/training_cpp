@@ -1,0 +1,42 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int binary_search_rec(int array[] ,int target ,int start,int end)
+{
+    if (start > end)
+        return -1;
+    
+    int mid=start+(end-start)/2;
+    
+    if(target==array[mid])
+     return mid;
+     
+    else if(target<array[mid]) //left
+        {
+         end=mid-1;
+         return binary_search_rec(array,target,start,end);
+        }
+    else 
+        {
+            start= mid+1;
+           return binary_search_rec(array,target,start,end);
+        }
+
+}
+
+
+int main() {
+
+int arr[]={1,4,6,7,8,9,23};
+
+int size=sizeof(arr)/sizeof(arr[0]);
+int val=9;
+
+
+int res= binary_search_rec(arr,val,0,size-1);
+
+cout<<" index : "<<res<<endl;
+
+    return 0;
+}
