@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+
+    // Constructor with value
+    Node(int val) {
+        data = val;
+        next = nullptr;
+    }
+
+    // Add function to append at the end
+    void add(int val) {
+        Node* temp = this;
+        while (temp->next != nullptr) {
+            temp = temp->next;
+        }
+        temp->next = new Node(val);
+    }
+};
+
+// Helper to print the list
+void printList(Node* head) {
+    while (head) {
+        cout << head->data;
+        if (head->next) cout << " -> ";
+        head = head->next;
+    }
+    cout << endl;
+}
+
+Node* rearrangeNode(Node * head )
+{
+    if(!head||!head->next) return head;
+    
+    Node* odd = head;
+    Node* even =head->next;
+    Node* evenHead=even;
+    
+    while(even&&even->next)
+    {
+        odd->next=even->next;
+        odd=odd->next; // iterate to the next odd
+        
+        even->next=odd->next;
+        even=even->next; //iterate to the next even
+        
+    }
+    odd->next=evenHead;
+    
+    return head;
+    
+}
+
+
+int main() {
+    Node* head = new Node(1);
+
+    head->add(2);
+    head->add(3);
+    head->add(4);
+    head->add(5);
+
+    printList(head);  // Output: 1 -> 2 -> 3 -> 4 -> 5
+
+head= rearrangeNode(head );
+ printList(head); 
+
+
+    return 0;
+}
