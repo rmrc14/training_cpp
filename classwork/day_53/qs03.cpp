@@ -6,7 +6,7 @@ struct Node {
     Node* next;
 };
 
-int hasKNodes(Node* head, int K) {
+bool hasKNodes(Node* head, int K) {
     int count = 0;
     while (head && count < K) {
         head = head->next;
