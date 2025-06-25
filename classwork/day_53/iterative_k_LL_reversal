@@ -1,0 +1,46 @@
+struct Node {
+    int val;
+    Node* next;
+};
+
+bool hasKNodes(Node* head, int K) {
+    int count = 0;
+    while (head && count < K) {
+        head = head->next;
+        count++;
+    }
+    return count == K;
+}
+
+Node* ReverseKGroup(Node* head, int K) {
+    if (!head || K <= 1)
+        return head;
+
+    Node dummy;
+    dummy.next = head;
+    Node* prevGroupEnd = &dummy;
+
+    while (hasKNodes(prevGroupEnd->next, K)) {
+        Node* groupStart = prevGroupEnd->next;
+        Node* curr = groupStart;
+        Node* prev = nullptr;
+        Node* next = nullptr;
+
+        // Reverse K nodes
+        for (int i = 0; i < K; ++i) {
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        // Connect previous group to the reversed one
+        prevGroupEnd->next = prev;
+        groupStart->next = curr;
+
+        // Move prevGroupEnd to the end of the reversed group
+        prevGroupEnd = groupStart;
+    }
+
+    return dummy.next;
+}
