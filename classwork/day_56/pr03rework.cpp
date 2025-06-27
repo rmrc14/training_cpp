@@ -2,16 +2,16 @@
 using namespace std;
 
 void moveZerosToEnd(int arr[], int n) {
-    int index = 0;  // Points to where the next non-zero should go
+    int index = 0;  
 
-    // Step 1: Move all non-zero elements to the front
+    // Move all non-zero elements to the front
     for (int i = 0; i < n; i++) {
         if (arr[i] != 0) {
             arr[index++] = arr[i];
         }
     }
 
-    // Step 2: Fill the rest with zeros
+    //  Fill the rest with zeros
     while (index < n) {
         arr[index++] = 0;
     }
