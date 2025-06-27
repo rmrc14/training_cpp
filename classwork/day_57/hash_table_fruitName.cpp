@@ -94,16 +94,21 @@ class HashTable{
     {
         int index=hashFunction(n);
         Node* temp=bucket[index];
+        bool flag=true;
         while(temp!=nullptr)
         {
             if(strcmp(temp->getName(),n)==0)
             {
                 cout<<"found: \n"<<temp->getName()
                 <<" : "<<temp->getValue();
+                flag=false;
             }
             
             temp=temp->getNext();
         }
+        if(flag)
+         cout<<" not found "<<endl;
+        
     }
     
 };
