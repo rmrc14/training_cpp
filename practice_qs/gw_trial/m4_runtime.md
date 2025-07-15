@@ -10,7 +10,7 @@
 - **IOHandler** – Handles user and program input/output including `INPUT`, `READ`, and `DATA`.
 - **ArrayManager** – Manages array operations like `DIM` and `REDIM`.
 - **TypeSystem** – Defines types (`INT`, `FLOAT`, `STRING`) and handles type coercion and conversions.
-
+```bash
 Runtime/
 ├── StatementExecutor.h/.cpp <-- Main dispatcher
 ├── ExpressionEvaluator.h/.cpp <-- Handles math/boolean logic
