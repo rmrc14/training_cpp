@@ -1,0 +1,134 @@
+PPT Title: Contributions of Team Member M6 – GWBasic64 Project
+Slide 1: Title Slide
+Title: Contributions of M6 – GWBasic64 Project
+
+Subtitle: Main, GWBasic64, SystemInterface & ErrorHandling Modules
+
+Include project logo/screenshot or architecture diagram as background.
+
+Slide 2: Overview
+Project Context:
+
+GWBasic64 – a modern interpreter for GW-BASIC-like language.
+
+Runs in Direct Mode (REPL) and File Mode (.BAS).
+
+M6 Modules:
+
+main.cpp
+
+GWBasic64 class (core orchestrator)
+
+SystemInterface (I/O Abstraction)
+
+ErrorHandler (Error Reporting)
+
+Slide 3: Responsibilities of M6
+Designed & implemented entry point (main.cpp):
+
+Handles command-line arguments, initializes system, runs REPL or file execution.
+
+Developed the GWBasic64 class:
+
+Ties together Lexer, Parser, Executor, ProgramMemory, and CLI.
+
+Supports commands like RUN, LIST, NEW, SAVE, LOAD, AUTO, DELETE, etc.
+
+Implemented SystemInterface:
+
+Unified Console I/O, File I/O, and Key Handling for Windows/MiniOS.
+
+Implemented Error Handling Framework:
+
+Standardized syntax, runtime, type, and system errors.
+
+Slide 4: Design Rationale
+Separation of Concerns:
+
+SystemInterface abstracts OS-specific I/O → portable between Windows and MiniOS.
+
+GWBasic64 handles business logic, independent of hardware.
+
+Robust Error Handling:
+
+Centralized ErrorHandler prevents crashes, provides user-friendly messages.
+
+Extensibility:
+
+Modular commands (e.g., RUN, LIST) allow new features without major rewrites.
+
+(Use a diagram showing modular architecture here.)
+
+Slide 5: main.cpp Flow
+Features:
+
+Validates input arguments.
+
+Switches between REPL & File Execution.
+
+Top-level error catching with try/catch.
+
+Why This Design?
+
+Keeps the entry point clean & focused.
+
+Ensures unknown exceptions don’t crash the interpreter.
+
+(Include flowchart from argument parsing → GWBasic64 → REPL/File Execution.)
+
+Slide 6: GWBasic64 Class Responsibilities
+Core Functions:
+
+runREPL(): Interactive shell.
+
+loadAndRunFile(): Executes .BAS files.
+
+executeProgram(), executeLine(): Delegates to Lexer, Parser, Executor.
+
+Design Choice:
+
+Acts as the “controller” in the interpreter’s architecture.
+
+Slide 7: SystemInterface Highlights
+Provides abstracted platform I/O:
+
+Keyboard input (detects special keys).
+
+Console output & status bar.
+
+File operations: openFile, readLine, saveFile.
+
+Why abstraction?
+
+Supports MiniOS & Windows without changing interpreter logic.
+
+(Add code snippet example of readKey() detecting special keys.)
+
+Slide 8: ErrorHandler Implementation
+Centralized error reporting:
+
+syntaxError(), runtimeError(), typeError(), systemError().
+
+Design Benefit:
+
+Consistent error messages.
+
+Clear separation between detection and display.
+
+Supports Direct Mode (-1) and Program Mode (line numbers).
+
+Slide 9: Key Achievements
+Stability: Robust error catching at all levels.
+
+Portability: I/O abstraction layer makes the interpreter OS-agnostic.
+
+User Experience: REPL design with command set & status bar improves usability.
+
+Extensibility: Modular design allows adding new BASIC commands easily.
+
+Slide 10: Next Steps
+Expand SystemInterface to handle MiniOS memory management (sysNew, sysDelete).
+
+Add advanced control flow & debugging commands.
+
+Optimize error handling for batch processing.
